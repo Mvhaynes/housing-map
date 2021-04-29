@@ -1,9 +1,10 @@
-var dallas_coordinates = [32.7767, -96.7970]
+// Center around Dallas
 var myMap = L.map("map", {
   center: [32.7767, -96.7970],
   zoom: 12
 });
 
+// Create background 
 L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
   attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
   tileSize: 512,
@@ -12,4 +13,7 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   id: "mapbox/streets-v11",
   accessToken: api_key
 }).addTo(myMap);
+
+// Neighborhood outlines 
+var outlineData = '../data/dallas_coordinates.json'
 
