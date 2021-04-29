@@ -15,5 +15,10 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(myMap);
 
 // Neighborhood outlines 
-var outlineData = '../data/dallas_coordinates.json'
+var outlines = 'static/data/dallas_coordinates.json';
+var geojson = d3.json(outlines);
+geojson.then(function(data) {
 
+  L.geoJson(data).addTo(myMap);
+
+})
