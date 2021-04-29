@@ -1,7 +1,7 @@
 // Center around Dallas
 var myMap = L.map("map", {
-  center: [32.7767, -96.7970],
-  zoom: 12
+  center: [32.82, -96.7970],
+  zoom: 11
 });
 
 // Create background 
@@ -18,7 +18,10 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 var outlines = 'static/data/dallas_coordinates.json';
 var geojson = d3.json(outlines);
 geojson.then(function(data) {
-
+  
+  // create neighborhood outlines
   L.geoJson(data).addTo(myMap);
+  
+  // Add pop ups with neighborhood names for each feature
 
 })
