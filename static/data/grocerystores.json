@@ -1,0 +1,633 @@
+{
+  "meta" : {
+    "view" : {
+      "id" : "d6b4-wy7m",
+      "name" : "Grocery_Feb14",
+      "assetType" : "invalid_datatype",
+      "averageRating" : 0,
+      "createdAt" : 1392908068,
+      "displayType" : "geoRows",
+      "downloadCount" : 184,
+      "hideFromCatalog" : false,
+      "hideFromDataJson" : false,
+      "indexUpdatedAt" : 1494499135,
+      "newBackend" : true,
+      "numberOfComments" : 0,
+      "oid" : 15141475,
+      "provenance" : "official",
+      "publicationAppendEnabled" : false,
+      "publicationDate" : 1392908070,
+      "publicationGroup" : 5806022,
+      "publicationStage" : "published",
+      "tableId" : 5806022,
+      "totalTimesRated" : 0,
+      "viewCount" : 41,
+      "viewLastModified" : 1494498801,
+      "viewType" : "tabular",
+      "approvals" : [ {
+        "reviewableUid" : "dhyw-s2d5",
+        "reviewedAt" : 1416239333,
+        "reviewedAutomatically" : true,
+        "state" : "approved",
+        "submissionId" : 560950,
+        "submissionObject" : "public_audience_request",
+        "submissionOutcome" : "change_audience",
+        "submittedAt" : 1416239333,
+        "workflowId" : 1948,
+        "submissionDetails" : {
+          "permissionType" : "READ"
+        },
+        "submissionOutcomeApplication" : {
+          "failureCount" : 0,
+          "status" : "success"
+        },
+        "submitter" : {
+          "id" : "jhxk-y6ib",
+          "displayName" : "Dallas OpenData"
+        }
+      } ],
+      "childViews" : [ "" ],
+      "columns" : [ {
+        "id" : -1,
+        "name" : "sid",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":sid",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "id",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":id",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "position",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":position",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "created_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "created_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "updated_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "updated_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : 231938458,
+        "name" : "the_geom",
+        "dataTypeName" : "point",
+        "fieldName" : "the_geom",
+        "position" : 1,
+        "renderTypeName" : "point",
+        "tableColumnId" : 32962164,
+        "cachedContents" : {
+          "non_null" : "138",
+          "null" : "0",
+          "top" : [ {
+            "item" : {
+              "coordinates" : [ -96.9031414965681, 32.8944163842929 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ -96.89730411343267, 32.7625372138651 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ -96.89682855227169, 32.778894559361035 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ -96.89391778706096, 32.71950756415901 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ -96.87713765261095, 32.71888379600841 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ -96.87255539152822, 32.64956123323345 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ -96.87189641766072, 32.89676313235082 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ -96.87086946960831, 32.90848589182116 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ -96.8688402615745, 32.8586683929321 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ -96.86650342583549, 32.64548204067081 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ -96.86611819482518, 32.86706051148572 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ -96.86364387613547, 32.86419745192945 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ -96.86343892651789, 32.759230974495175 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ -96.86235277594163, 32.650138425194385 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ -96.86130579003186, 32.74916573479439 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ -96.86124610368017, 32.862823287819324 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ -96.85923145448196, 32.74888870239943 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ -96.8586563001484, 32.64923250326638 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ -96.85838065254055, 32.74244464051001 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ -96.94425179442763, 32.648540537432524 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          } ],
+          "cardinality" : "138"
+        },
+        "format" : { }
+      }, {
+        "id" : 231938459,
+        "name" : "STORE_NAME",
+        "dataTypeName" : "text",
+        "fieldName" : "store_name",
+        "position" : 2,
+        "renderTypeName" : "text",
+        "tableColumnId" : 32962165,
+        "cachedContents" : {
+          "largest" : "Whole Foods Market",
+          "non_null" : "138",
+          "null" : "0",
+          "top" : [ {
+            "item" : "Walmart Supercenter",
+            "count" : "12"
+          }, {
+            "item" : "Tom Thumb",
+            "count" : "12"
+          }, {
+            "item" : "Fiesta Mart",
+            "count" : "11"
+          }, {
+            "item" : "Aldi",
+            "count" : "10"
+          }, {
+            "item" : "Kroger",
+            "count" : "9"
+          }, {
+            "item" : "Albertsons",
+            "count" : "8"
+          }, {
+            "item" : "El Rancho",
+            "count" : "6"
+          }, {
+            "item" : "Sam's Club",
+            "count" : "6"
+          }, {
+            "item" : "Save-A-Lot",
+            "count" : "6"
+          }, {
+            "item" : "Minyard Food Stores",
+            "count" : "6"
+          }, {
+            "item" : "Target",
+            "count" : "5"
+          }, {
+            "item" : "Walmart Market",
+            "count" : "5"
+          }, {
+            "item" : "Malone's Cost Plus",
+            "count" : "4"
+          }, {
+            "item" : "Trader Joe's",
+            "count" : "4"
+          }, {
+            "item" : "Whole Foods Market",
+            "count" : "4"
+          }, {
+            "item" : "El Rio Grande",
+            "count" : "3"
+          }, {
+            "item" : "Natural Grocers",
+            "count" : "3"
+          }, {
+            "item" : "Jerry's Supermarket",
+            "count" : "3"
+          }, {
+            "item" : "Central Market",
+            "count" : "2"
+          }, {
+            "item" : "SuperTarget",
+            "count" : "2"
+          } ],
+          "smallest" : "Albertsons",
+          "cardinality" : "33"
+        },
+        "format" : { }
+      }, {
+        "id" : 231938461,
+        "name" : "ADDRESS",
+        "dataTypeName" : "text",
+        "fieldName" : "address",
+        "position" : 3,
+        "renderTypeName" : "text",
+        "tableColumnId" : 32962167,
+        "cachedContents" : {
+          "largest" : "W. Lovers Ln.",
+          "non_null" : "138",
+          "null" : "0",
+          "top" : [ {
+            "item" : "Midway at LBJ",
+            "count" : "2"
+          }, {
+            "item" : "11722 Marsh Ln. Ste 317",
+            "count" : "1"
+          }, {
+            "item" : "2515 W Jefferson Blvd",
+            "count" : "1"
+          }, {
+            "item" : "9440 Marsh Lane",
+            "count" : "1"
+          }, {
+            "item" : "8602-8698 Skillman St",
+            "count" : "1"
+          }, {
+            "item" : "9140 Forest Ln",
+            "count" : "1"
+          }, {
+            "item" : "9440 Garland Rd",
+            "count" : "1"
+          }, {
+            "item" : "9301 Forest Ln",
+            "count" : "1"
+          }, {
+            "item" : "Walnut Hill at Central",
+            "count" : "1"
+          }, {
+            "item" : "4800 Columbia Ave",
+            "count" : "1"
+          }, {
+            "item" : "2440 W. Illinois Ave.",
+            "count" : "1"
+          }, {
+            "item" : "6401 Abrams Rd",
+            "count" : "1"
+          }, {
+            "item" : "1800 N Henderson Ave.",
+            "count" : "1"
+          }, {
+            "item" : "323 Golden Triangle",
+            "count" : "1"
+          }, {
+            "item" : "2900 Wheatland Rd",
+            "count" : "1"
+          }, {
+            "item" : "1201 W Camp Wisdom",
+            "count" : "1"
+          }, {
+            "item" : "7700 W Northwest",
+            "count" : "1"
+          }, {
+            "item" : "212 Medallion Shopping Center",
+            "count" : "1"
+          }, {
+            "item" : "2225 W Ledbetter Dr",
+            "count" : "1"
+          }, {
+            "item" : "6015 Lindsley Rd",
+            "count" : "1"
+          } ],
+          "smallest" : "10020 Marsh Ln",
+          "cardinality" : "137"
+        },
+        "format" : { }
+      }, {
+        "id" : 231938463,
+        "name" : "CITY",
+        "dataTypeName" : "text",
+        "fieldName" : "city",
+        "position" : 4,
+        "renderTypeName" : "text",
+        "tableColumnId" : 32962169,
+        "cachedContents" : {
+          "largest" : "Dallas",
+          "non_null" : "138",
+          "null" : "0",
+          "top" : [ {
+            "item" : "Dallas",
+            "count" : "138"
+          } ],
+          "smallest" : "Dallas",
+          "cardinality" : "1"
+        },
+        "format" : { }
+      }, {
+        "id" : 231938465,
+        "name" : "Status",
+        "dataTypeName" : "text",
+        "fieldName" : "status",
+        "position" : 5,
+        "renderTypeName" : "text",
+        "tableColumnId" : 32962171,
+        "cachedContents" : {
+          "largest" : "Opening",
+          "non_null" : "138",
+          "null" : "0",
+          "top" : [ {
+            "item" : "Open",
+            "count" : "127"
+          }, {
+            "item" : "Opening",
+            "count" : "10"
+          }, {
+            "item" : "Closing",
+            "count" : "1"
+          } ],
+          "smallest" : "Closing",
+          "cardinality" : "3"
+        },
+        "format" : { }
+      } ],
+      "grants" : [ {
+        "inherited" : false,
+        "type" : "viewer",
+        "flags" : [ "public" ]
+      } ],
+      "metadata" : {
+        "geo" : {
+          "parentUid" : "dhyw-s2d5",
+          "isNbe" : true
+        }
+      },
+      "owner" : {
+        "id" : "jhxk-y6ib",
+        "displayName" : "Dallas OpenData",
+        "profileImageUrlLarge" : "/api/users/jhxk-y6ib/profile_images/LARGE",
+        "profileImageUrlMedium" : "/api/users/jhxk-y6ib/profile_images/THUMB",
+        "profileImageUrlSmall" : "/api/users/jhxk-y6ib/profile_images/TINY",
+        "screenName" : "Dallas OpenData",
+        "type" : "interactive",
+        "flags" : [ "acceptedEula", "mayBeStoriesCoOwner" ]
+      },
+      "query" : { },
+      "rights" : [ "read" ],
+      "tableAuthor" : {
+        "id" : "jhxk-y6ib",
+        "displayName" : "Dallas OpenData",
+        "profileImageUrlLarge" : "/api/users/jhxk-y6ib/profile_images/LARGE",
+        "profileImageUrlMedium" : "/api/users/jhxk-y6ib/profile_images/THUMB",
+        "profileImageUrlSmall" : "/api/users/jhxk-y6ib/profile_images/TINY",
+        "screenName" : "Dallas OpenData",
+        "type" : "interactive",
+        "flags" : [ "acceptedEula", "mayBeStoriesCoOwner" ]
+      },
+      "flags" : [ "default", "ownerMayBeContacted", "restorable", "restorePossibleForType" ]
+    }
+  },
+  "data" : [ [ "row-bcky-w3pv.m62h", "00000000-0000-0000-D1B7-81AC3AE030BE", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.78811400000008 32.96298600000003)", "Albertsons", "7007 Arapaho Rd", "Dallas", "Open" ]
+, [ "row-iv6j~v787_r4i9", "00000000-0000-0000-0713-77EA476D9D3D", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.7096630000001 32.86502800000003)", "Albertsons", "10203 E Northwest Hwy", "Dallas", "Open" ]
+, [ "row-6jae~5fpq-24xn", "00000000-0000-0000-B47C-16E0DD5F04B1", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.7971240000001 32.80557300000003)", "Albertsons", "3524 McKinney Ave", "Dallas", "Open" ]
+, [ "row-34bj~2wrb-5bvh", "00000000-0000-0000-3A23-2504B9DF47B7", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.75043100000009 32.83528600000003)", "Albertsons", "6464 E Mockingbird Ln", "Dallas", "Open" ]
+, [ "row-bii7-qfkq-va3d", "00000000-0000-0000-552F-56769040FDCC", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.69965958437467 32.83400011010607)", "Albertsons", "320 Casa Linda Plz", "Dallas", "Open" ]
+, [ "row-3nnf.muyy_whwt", "00000000-0000-0000-F755-A1FD42A56827", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.82736339950934 32.99943384839869)", "Albertsons", "4625-4727 Frankford Rd", "Dallas", "Open" ]
+, [ "row-x8qn.pvti-5gnp", "00000000-0000-0000-723E-EA1CB553168C", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.83623918178709 32.865779748623716)", "Albertsons", "4349 W Northwest Hwy", "Dallas", "Open" ]
+, [ "row-5phz_y2sq-fs94", "00000000-0000-0000-F594-48917332FCFF", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.65799303149659 32.70823860792928)", "Malone's Cost Plus", "333 S Saint Augustine Rd", "Dallas", "Open" ]
+, [ "row-jqvw-kucf_vmby", "00000000-0000-0000-5878-DE3170B41958", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.85805764837777 32.77977847028112)", "Minyard Food Stores", "2223 Singleton Blvd", "Dallas", "Open" ]
+, [ "row-236e-3u4x-jsvp", "00000000-0000-0000-607F-50357F7C4529", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.86364387613547 32.86419745192945)", "Fiesta Mart", "3460 Webb Chapel Ext", "Dallas", "Open" ]
+, [ "row-4hi4_ne3g~dvdm", "00000000-0000-0000-96BC-E2EA0593F301", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.74567819948844 32.862879827057625)", "Fiesta Mart", "6401 Abrams Rd", "Dallas", "Open" ]
+, [ "row-ifmd~7w5m-uzfp", "00000000-0000-0000-CD78-1604DA8912C7", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.76862923919896 32.84939181311596)", "Central Market", "5750 E Lovers Ln", "Dallas", "Open" ]
+, [ "row-s6dj.n3x9_w7wm", "00000000-0000-0000-FF0B-7C88B2CD34BC", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.68423496960247 32.76167698618978)", "Fiesta Mart", "2951 S Buckner Blvd", "Dallas", "Open" ]
+, [ "row-bqxc~fcat-bwpg", "00000000-0000-0000-4BB2-A829A183E83C", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.7708250000001 32.80902900000004)", "Fiesta Mart", "5334 Ross Ave", "Dallas", "Open" ]
+, [ "row-fppz~rk2p.r8bs", "00000000-0000-0000-C1D0-E49B436E71B1", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.83313127276354 32.74431959155347)", "Fiesta Mart", "611 W Jefferson Blvd", "Dallas", "Open" ]
+, [ "row-8s9x~w3rc.28z8", "00000000-0000-0000-F2ED-733AEE9CC5A4", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.86611819482518 32.86706051148572)", "Fiesta Mart", "9727 Webb Chapel Rd", "Dallas", "Open" ]
+, [ "row-jwqm_qczz_ayhm", "00000000-0000-0000-59B3-4B08EE85DD0A", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.76713634290932 32.93887620181112)", "Fiesta Mart", "8060 Spring Valley Rd", "Dallas", "Open" ]
+, [ "row-7zvw.89jn.vdbr", "00000000-0000-0000-E2B1-CE654A58BDD4", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.79355894500013 32.99985112680431)", "Tom Thumb", "18208-18410 Preston Rd", "Dallas", "Open" ]
+, [ "row-xabx_rnix_hxxq", "00000000-0000-0000-F66E-26133E95E531", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.77094990882688 32.83841600390982)", "Kroger", "5665 E Mockingbird Ln", "Dallas", "Open" ]
+, [ "row-trtq-7q2c~wa23", "00000000-0000-0000-317F-E80E363401D5", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.84614502062578 32.99853443109615)", "Kroger", "3939 Frankford Rd", "Dallas", "Open" ]
+, [ "row-6wy8_nv95~hrmc", "00000000-0000-0000-C3E4-61830095292E", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.70145600000008 32.865555000000036)", "Kroger", "10675-10677 E Northwest Hwy", "Dallas", "Open" ]
+, [ "row-cjtr.w7k2.jrie", "00000000-0000-0000-5744-D5524842B228", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.80129413144549 32.98458861432893)", "Kroger", "17194 NE Preston Rd", "Dallas", "Open" ]
+, [ "row-wfp7-2a7c.7sh3", "00000000-0000-0000-6728-915CE6E127C8", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.83276228650868 32.725806185507324)", "Kroger", "752 Wynnewood Village Shp Ctr", "Dallas", "Open" ]
+, [ "row-g7bf.ak8v_hg47", "00000000-0000-0000-B553-1A6A4F4706F2", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.68405216715455 32.738252406141164)", "El Rancho", "1515 S Buckner Blvd", "Dallas", "Open" ]
+, [ "row-eqni-j8wz_vvbc", "00000000-0000-0000-F59D-45F07E921CF6", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.70170500156632 32.734930188475715)", "Malone's Cost Plus", "7007 Lake June Rd", "Dallas", "Open" ]
+, [ "row-gmvz_6hqh_gssb", "00000000-0000-0000-0448-7CC3C07A8108", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.76342857297732 32.79391324270426)", "Malone's Cost Plus", "4800 Columbia Ave", "Dallas", "Open" ]
+, [ "row-4vtg-32wg.6qmv", "00000000-0000-0000-E8EF-47E6387DE98B", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.67245561568673 32.833763776839966)", "El Rancho", "2550 Gus Thomasson Rd", "Dallas", "Open" ]
+, [ "row-ppx4-qsmj.u2ma", "00000000-0000-0000-9897-69EEA0535A8C", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.81539221705077 32.72111448382451)", "Food Rite", "2215 S Marsalis Ave", "Dallas", "Open" ]
+, [ "row-tibs~8cup-2xvt", "00000000-0000-0000-51EB-9EBDAB33AD1A", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.8430653395615 32.66285699616796)", "Minyard Food Stores", "1201 W Camp Wisdom", "Dallas", "Open" ]
+, [ "row-gm85~hrnr-wuyp", "00000000-0000-0000-2808-DF275A9F9F63", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.76221164979427 32.772964814119014)", "Minyard Food Stores", "3230 MLK Blvd", "Dallas", "Open" ]
+, [ "row-pwkm.umni-err5", "00000000-0000-0000-33AF-8B8EDD910277", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.78818679855323 32.685579775497004)", "Minyard Food Stores", "2130 E Ledbetter Dr", "Dallas", "Open" ]
+, [ "row-tm9r~93vi_9urp", "00000000-0000-0000-16B7-3C9D005022A6", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.65009300000008 32.73433700000003)", "Minyard Food Stores", "10121 E Lake June Rd", "Dallas", "Open" ]
+, [ "row-wmqs.cnjj-2wev", "00000000-0000-0000-8F99-66613A2EDE10", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.71220469840397 32.80172381023563)", "Minyard Food Stores", "8040 Ferguson Rd", "Dallas", "Open" ]
+, [ "row-8ke6.nvx2-fp6i", "00000000-0000-0000-6FA1-CE908D848100", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.80593681595224 32.951514365143844)", "Tom Thumb", "14999 Preston Rd", "Dallas", "Open" ]
+, [ "row-9xcm-zhcv-4anq", "00000000-0000-0000-7673-FFEAB94B8F55", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.80512398801437 32.71654344181993)", "Save-A-Lot", "2603-2729 S Lancaster Rd", "Dallas", "Open" ]
+, [ "row-5xzc_k4v2~knu5", "00000000-0000-0000-483B-D92956FEA7C9", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.84093023797692 32.704677838808756)", "Save-A-Lot", "1150 W Kiest Blvd Suite 210", "Dallas", "Open" ]
+, [ "row-gj2s.kyma~xbp6", "00000000-0000-0000-B563-BC711FDC3314", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.74604209023391 32.865839932856844)", "SuperTarget", "6419 Skillman St", "Dallas", "Open" ]
+, [ "row-upms.9rvg-ix9b", "00000000-0000-0000-E44B-C984C42F84A4", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.77009390937334 32.982723868151346)", "SuperTarget", "16731 Coit Rd", "Dallas", "Open" ]
+, [ "row-tc98-cq3e_xab8", "00000000-0000-0000-08DF-114FBC408C31", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.8688402615745 32.8586683929321)", "Terry's Supermarket", "3025 Webb Chapel Ext", "Dallas", "Open" ]
+, [ "row-wfan.d3m2-78b8", "00000000-0000-0000-7EC0-FA1C6848F05A", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.89391778706096 32.71950756415901)", "Terry's Supermarket", "4444 W Illinois Ave", "Dallas", "Open" ]
+, [ "row-a8nm~eg6k~ka48", "00000000-0000-0000-AFA7-AE20C280C87A", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.72064305363197 32.8971118979241)", "Tom Thumb", "8602-8698 Skillman St", "Dallas", "Open" ]
+, [ "row-nbjz.m5pv.k4zr", "00000000-0000-0000-6C31-381A0B912DF1", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.80195200000009 32.91108700000004)", "Tom Thumb", "11920 Preston Rd", "Dallas", "Open" ]
+, [ "row-3q7j-2e2e~2ncu", "00000000-0000-0000-08EE-D05C04E5980A", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.75443167345729 32.83777752750768)", "Tom Thumb", "6319-6333 E Mockingbird Ln", "Dallas", "Open" ]
+, [ "row-y3j7~sinv-9v2n", "00000000-0000-0000-454E-8110BD6648EA", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.7703090000001 32.88859600000003)", "Tom Thumb", "10455 N Central Expy", "Dallas", "Open" ]
+, [ "row-h5hv_8ycv.6y5z", "00000000-0000-0000-35AE-FBB8FCA62691", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.85838065254055 32.74244464051001)", "Tom Thumb", "315 S Hampton Rd", "Dallas", "Open" ]
+, [ "row-g855-mh4m~pzuu", "00000000-0000-0000-A7A7-9B7101350F65", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.79371000000009 32.80061200000004)", "Walmart Market", "2305 N Central Expy", "Dallas", "Open" ]
+, [ "row-rq43~j5ya~6et4", "00000000-0000-0000-B704-0618679F5B5D", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.839192189219 32.92222879140017)", "Walmart Market", "12789 Midway Rd", "Dallas", "Closing" ]
+, [ "row-ejt8~gt92-cmmb", "00000000-0000-0000-6FCE-53CCF1728CE2", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.67633079839159 32.83596672900148)", "Walmart Market", "2275 Gus Thomasson Rd", "Dallas", "Open" ]
+, [ "row-2mhq_4qx2~5i6i", "00000000-0000-0000-B3EB-B919C57119C0", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.68914815834833 32.793719329327445)", "Walmart Supercenter", "7401 Samuell Blvd", "Dallas", "Open" ]
+, [ "row-3rs3~b8sh.d2x6", "00000000-0000-0000-02A6-B8186418F2E6", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.8184990000001 32.95612300000003)", "Walmart Supercenter", "15220 Montfort Drive", "Dallas", "Open" ]
+, [ "row-82ke~4map.s3ww", "00000000-0000-0000-12AF-897072160C96", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.89730411343267 32.7625372138651)", "Walmart Supercenter", "1521 North Cockrell Hill Road", "Dallas", "Open" ]
+, [ "row-jhff.93sw~pfq7", "00000000-0000-0000-61F0-C42FEE6BCE02", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.87255539152822 32.64956123323345)", "Walmart Supercenter", "3155 W. Wheatland Road", "Dallas", "Open" ]
+, [ "row-q2ht_nbus-jwvv", "00000000-0000-0000-5DD9-B0FB41299299", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.80310699785096 32.907364765847724)", "Whole Foods Market", "11700 Preston Ln", "Dallas", "Open" ]
+, [ "row-up4u.t4p9.869r", "00000000-0000-0000-3CAD-858CF115D370", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.68710507071255 32.79388280358356)", "Sam's Club", "5555 S Buckner Blvd", "Dallas", "Open" ]
+, [ "row-h3mq_wjmi-tb5u", "00000000-0000-0000-9CAD-AFEC9C86A05C", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.86650342583549 32.64548204067081)", "Sam's Club", "2900 Wheatland Rd", "Dallas", "Open" ]
+, [ "row-mjcq.se7d.e4y5", "00000000-0000-0000-F4F6-A4F01D5DB0E2", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.67245887835998 32.868743796574584)", "Sam's Club", "12000 Mccree Rd", "Dallas", "Open" ]
+, [ "row-iakc.eiub~2a56", "00000000-0000-0000-95BE-2F6D6512A721", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.7917497455515 32.80481326555481)", "Target", "2417 N Haskell Rd", "Dallas", "Open" ]
+, [ "row-2xrj_j6yj-me44", "00000000-0000-0000-4E73-32D68DF4B879", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.75290374083254 32.856913203400886)", "Target", "212 Medallion Shopping Center", "Dallas", "Open" ]
+, [ "row-2ghx_ntjh_b7r6", "00000000-0000-0000-89CB-4677D0227314", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.85382738431643 32.862350710435614)", "Target", "9440 Marsh Lane", "Dallas", "Open" ]
+, [ "row-p3vw~h228~u5zu", "00000000-0000-0000-93B3-5B0C04FBD635", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.86235277594163 32.650138425194385)", "Target", "39739 LBJ Fwy", "Dallas", "Open" ]
+, [ "row-469c.757x-ub5f", "00000000-0000-0000-ECF8-AA59601627E3", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.85728513420054 32.90851037511565)", "Albertsons", "3630 Forest Lane", "Dallas", "Open" ]
+, [ "row-wwjq-ak4e_h9q7", "00000000-0000-0000-AF91-0CFEEE6EF077", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.87713765261095 32.71888379600841)", "Fiesta Mart", "3434 W Illinois Ave", "Dallas", "Open" ]
+, [ "row-hn2p_g63z_wxjq", "00000000-0000-0000-2F86-ABE0879F5C8A", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.682017923454 32.85149931291193)", "Fiesta Mart", "11445 Garland Rd", "Dallas", "Open" ]
+, [ "row-fnp5-hkzj-5v64", "00000000-0000-0000-E7DB-F9B545D26331", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.85565100000008 32.69263800000003)", "Fiesta Mart", "2225 W Ledbetter Dr", "Dallas", "Open" ]
+, [ "row-3ts4_8dt7~rvmg", "00000000-0000-0000-DD7D-EA8818E87148", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.74493533064982 32.908143872307186)", "Kroger", "9140 Forest Ln", "Dallas", "Open" ]
+, [ "row-ue7b-q446_bd8z", "00000000-0000-0000-4A0A-5B28C174EF11", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.76706762953341 32.852286973747084)", "Tom Thumb", "5809 E Lovers Ln", "Dallas", "Open" ]
+, [ "row-ggdw.84ux-ps4e", "00000000-0000-0000-AE5A-023E66222790", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.80491458446564 32.89635850195652)", "Tom Thumb", "5959 Royal Ln", "Dallas", "Open" ]
+, [ "row-hm2m_kd6z~viyq", "00000000-0000-0000-3E4A-4265B2757144", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.8529971842759 32.91080389741462)", "Tom Thumb", "3757 Forest Ln", "Dallas", "Open" ]
+, [ "row-j6ps_e3fa-p8rs", "00000000-0000-0000-6107-4D98AC15A6C2", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.774883112987 32.86415560592347)", "Tom Thumb", "7700 W Northwest", "Dallas", "Open" ]
+, [ "row-ebry.ejk5_awrg", "00000000-0000-0000-1883-B18DE448329F", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.80297644148631 32.71076585963932)", "Fiesta Mart", "3030 S Lancater Rd", "Dallas", "Open" ]
+, [ "row-ze8u~8g8d_4aer", "00000000-0000-0000-C770-2656A660A5ED", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.84137620669725 32.69548421881072)", "Malone's Cost Plus", "323 Golden Triangle", "Dallas", "Open" ]
+, [ "row-4hmj-3td9.qsf6", "00000000-0000-0000-0434-1CF419646520", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.9031414965681 32.8944163842929)", "Ko'mart", "2240 Royal Ln.", "Dallas", "Open" ]
+, [ "row-fjyu.rgxv-ce9u", "00000000-0000-0000-7997-AFB2BB329DFA", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.71930261325502 32.92250382067644)", "Hong Kong Market Place", "9780 Walnut St.", "Dallas", "Open" ]
+, [ "row-iphp-pqfq~xpd6", "00000000-0000-0000-3DF2-BAECC726C027", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.76564252549181 32.77218236233748)", "Save-A-Lot", "3021 MLK Blvd.", "Dallas", "Open" ]
+, [ "row-nq2k-f8d2-wzcn", "00000000-0000-0000-E805-C585D68F36B8", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.81165324444807 32.81279688908625)", "Kroger", "4142 Cedar Springs Rd", "Dallas", "Open" ]
+, [ "row-2wat_nk28-jmq4", "00000000-0000-0000-FF99-668E5CD29453", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.8226150345509 32.84452441969586)", "Tom Thumb", "7117 Inwood", "Dallas", "Open" ]
+, [ "row-amsz-brvp-zmkr", "00000000-0000-0000-C404-A98DA27FFAD9", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.8350252147939 32.72166223854177)", "El Rancho", "655 W Illinois Ave.", "Dallas", "Open" ]
+, [ "row-3i7p.474u_8waj", "00000000-0000-0000-CF9E-80BA64F0250A", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.77106622748984 32.94216830505166)", "El Rancho", "14211 Coit Rd.", "Dallas", "Open" ]
+, [ "row-g8my-dq39_dkif", "00000000-0000-0000-681E-14465E1CA200", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.73888493265895 32.91086832738034)", "Walmart Supercenter", "9301 Forest Ln", "Dallas", "Open" ]
+, [ "row-gsdp-mdmg_bzhq", "00000000-0000-0000-3EA1-C5DEB8E1CB88", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.77288040177108 32.811026845478736)", "Sprouts Farmers Market", "1800 N Henderson Ave.", "Dallas", "Open" ]
+, [ "row-ki8w~dev7.2jma", "00000000-0000-0000-8DAD-3C88B44EB15C", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.8537483795046 32.908374574920295)", "Sprouts Farmers Market", "11722 Marsh Ln. Ste 317", "Dallas", "Open" ]
+, [ "row-ziav.csem~6za6", "00000000-0000-0000-FB35-43277F27F717", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.75241924428089 32.862499888455396)", "Walmart Supercenter", "6185 Retail Dr", "Dallas", "Open" ]
+, [ "row-pxfb~h8c3~6djz", "00000000-0000-0000-0635-A0FFF82CD137", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.75418128837866 32.8618710517292)", "Sam's Club", "6185 Retail Rd", "Dallas", "Open" ]
+, [ "row-pec9-6rtw~b6cz", "00000000-0000-0000-42AC-FD269C07E038", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.76818349554914 32.86887676223076)", "Whole Foods Market", "8190 Park Ln", "Dallas", "Open" ]
+, [ "row-42ee-s84e-gfmh", "00000000-0000-0000-CCAE-3356A054C14D", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.6814914576978 32.734885152782624)", "Elrods Cost Plus", "1310 S Buckner Blvd", "Dallas", "Open" ]
+, [ "row-digf.nxz6_cixn", "00000000-0000-0000-8233-199604A80754", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.8552913764405 32.76356750960394)", "Elrods Cost Plus", "2025 Fort Worth Ave", "Dallas", "Open" ]
+, [ "row-fi4z~3mky~k6sa", "00000000-0000-0000-21A9-7E7FE2FE66EB", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.81348144443228 32.92809475542038)", "Target", "13131 Montfort Dr.", "Dallas", "Open" ]
+, [ "row-ts28~izrg_jqby", "00000000-0000-0000-8796-6A8DD7CAE883", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.85781760760847 32.99512230569841)", "Walmart Supercenter", "18121 Marsh Ln", "Dallas", "Open" ]
+, [ "row-xxhj~zrks-8vjc", "00000000-0000-0000-BAAB-BDE667F3A35C", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.75227294544436 32.81582210567992)", "Whole Foods Market", "2118 Abrams Rd.", "Dallas", "Open" ]
+, [ "row-behc_eirj_a6t9", "00000000-0000-0000-00CB-52132650595F", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.8562568284647 32.71927591856943)", "Jerry's Supermarket", "2314 W Illinois Ave", "Dallas", "Open" ]
+, [ "row-att3~yb5a-bkv2", "00000000-0000-0000-3C92-E9A948943251", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.83169299967825 32.742884559530445)", "Jerry's Supermarket", "532 W Jefferson Blvd", "Dallas", "Open" ]
+, [ "row-xvq4~f73b_zhgz", "00000000-0000-0000-06A7-E21219DD0F9A", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.84691360312243 32.778761264972474)", "Jerry's Supermarket", "1719 Singleton Blvd", "Dallas", "Open" ]
+, [ "row-h36t~fhbk_66pv", "00000000-0000-0000-E32E-CE06F6FC0D2B", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.68179886658375 32.761915323386475)", "Aldi", "2926 S. Buckner Blvd.", "Dallas", "Open" ]
+, [ "row-cyf8~94k9-fbz5", "00000000-0000-0000-B98A-923BD53BE072", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.8586563001484 32.64923250326638)", "Aldi", "8034 Chrysalis Dr.", "Dallas", "Open" ]
+, [ "row-5cyu_qfeb-5q5f", "00000000-0000-0000-CFEA-DFD22446A170", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.71898569743162 32.91078492380108)", "Aldi", "9772 Forest Ln.", "Dallas", "Open" ]
+, [ "row-q7zc_hsy7_9kxv", "00000000-0000-0000-E85C-5038911FEC7F", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.7754144258531 32.794360392855744)", "Aldi", "4120 Gaston Ave.", "Dallas", "Open" ]
+, [ "row-ekrp.cmsq~kiw7", "00000000-0000-0000-E5E3-796C841E0E60", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.85812592058342 32.71906760102385)", "Aldi", "2440 W. Illinois Ave.", "Dallas", "Open" ]
+, [ "row-jqcg_js7y_txeb", "00000000-0000-0000-CDC0-DFAFF529047A", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.80257569193637 32.93242742472641)", "Aldi", "13548 Preston Rd.", "Dallas", "Open" ]
+, [ "row-tcd9~hr89~jukm", "00000000-0000-0000-013A-42D7A18EF81B", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.85428479588583 32.99566045347574)", "Aldi", "3632 Frankford Rd.", "Dallas", "Open" ]
+, [ "row-fec8~n6da_8wzs", "00000000-0000-0000-F2A0-16BB5A32AECE", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.7497468365253 32.85580219840141)", "Aldi", "5828 Abrams Rd.", "Dallas", "Open" ]
+, [ "row-b2qy~2yaa-aqqw", "00000000-0000-0000-2ABE-A9913EC3B670", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.64675261117264 32.735339702657924)", "El Rio Grande", "10325 Lake June Rd.", "Dallas", "Open" ]
+, [ "row-rvr4.ysss~8nkh", "00000000-0000-0000-B429-027859570900", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.86130579003186 32.74916573479439)", "Save-A-Lot", "2627 W Jefferson Blvd", "Dallas", "Open" ]
+, [ "row-634g.ga6y-8fwu", "00000000-0000-0000-52AE-9E3449057D62", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.86343892651789 32.759230974495175)", "Aldi", "2505 Fort Worth Ave", "Dallas", "Open" ]
+, [ "row-7xs7-wng2-b66x", "00000000-0000-0000-F8D2-25A94D829B37", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.82882964114232 32.81447129550655)", "Kroger", "4901 Maple Ave", "Dallas", "Open" ]
+, [ "row-4vmc-d28g~4kx4", "00000000-0000-0000-6ED4-C6335D7A9004", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.78974730766477 32.80656693016888)", "Kroger", "4241 Capitol Ave", "Dallas", "Open" ]
+, [ "row-mzhb-j65g-m5p2", "00000000-0000-0000-1C8D-C402C406F2DF", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.75274421235254 32.93684661658205)", "Walmart Supercenter", "13739 N Central Expy", "Dallas", "Open" ]
+, [ "row-pjig-22xx~qkfr", "00000000-0000-0000-A254-D7D8E88C1AEF", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.83156400219563 32.81780879562086)", "El Rio Grande", "5308 Maple Ave.", "Dallas", "Open" ]
+, [ "row-kvay.43ps.35u4", "00000000-0000-0000-6B67-4E5EA5A4D692", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.85923145448196 32.74888870239943)", "El Rio Grande", "2515 W Jefferson Blvd", "Dallas", "Open" ]
+, [ "row-33fz.4amn-uq3q", "00000000-0000-0000-D592-18C1717EF3C0", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.82479585139401 32.6851138866948)", "Walmart Supercenter", "Ledbetter at I-35", "Dallas", "Open" ]
+, [ "row-huzy-tpd9_a79e", "00000000-0000-0000-A251-FFD177338BD2", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.86124610368017 32.862823287819324)", "Sam's Club", "9461 Webb Chapel Rd", "Dallas", "Open" ]
+, [ "row-8stu~wyrz.cvjb", "00000000-0000-0000-D60D-E8FB83CD70EA", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.68322784024033 32.759754932177984)", "Walmart Market", "2827 S Buckner Blvd", "Dallas", "Open" ]
+, [ "row-v5ej.pzia~rdsu", "00000000-0000-0000-96B7-4D3E37972744", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.80207444653703 32.8942874792696)", "Central Market", "10720 Preston Rd", "Dallas", "Open" ]
+, [ "row-4kft-s8p4.2dtz", "00000000-0000-0000-4966-F0FC760CC542", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.85479753452695 32.88161608375226)", "El Rancho", "10020 Marsh Ln", "Dallas", "Open" ]
+, [ "row-n6n5-s5eh-apst", "00000000-0000-0000-EA3B-61B07164320A", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.85663515182246 32.86222200884334)", "Walmart", "9410 Webb Chapel", "Dallas", "Open" ]
+, [ "row-et78_jxy2~4mad", "00000000-0000-0000-E6B4-13F162760A21", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.87086946960831 32.90848589182116)", "Aldi", "3128 Forest Lane #245", "Dallas", "Open" ]
+, [ "row-cyw9.vqcn.hrzg", "00000000-0000-0000-1FF2-3C04F0DD06C5", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.77053981922701 32.81492734160834)", "Trader Joe's", "2001 Greenville Ave", "Dallas", "Open" ]
+, [ "row-vtt8-gxmu.eds5", "00000000-0000-0000-4670-CC5CCE754BBA", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.7694552240429 32.81653053901032)", "Walmart Market", "2218 Greenville Ave", "Dallas", "Open" ]
+, [ "row-dd5v_s6hy~q445", "00000000-0000-0000-7012-8FE548EF92F0", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.87189641766072 32.89676313235082)", "Super Plaza", "10909 Webb Chapel Rd", "Dallas", "Open" ]
+, [ "row-3x37_2zx2~m2j9", "00000000-0000-0000-DAB4-E05F6578EFE6", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.74740015476743 32.80024907464616)", "El Mercado Azteca", "6015 Lindsley Rd", "Dallas", "Open" ]
+, [ "row-9z4h~sd6p.mx68", "00000000-0000-0000-71C7-46F6D0E3F5F5", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.77202738194181 32.880999436485745)", "Trader Joe's", "Walnut Hill at Central", "Dallas", "Opening" ]
+, [ "row-wy6n.bqug_hfr8", "00000000-0000-0000-A368-4F0CF21524D1", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.68046431037048 32.80531037096127)", "Save-A-Lot", "3322 N Buckner Blvd", "Dallas", "Open" ]
+, [ "row-29dw_gdpv_i3an", "00000000-0000-0000-C331-7A80C72924D8", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.66625914341584 32.750538099582286)", "Save-A-Lot", "2233 N Prairie Creek Rd", "Dallas", "Open" ]
+, [ "row-t8wr.hhuj_yxsz", "00000000-0000-0000-41E2-105CEF61C0C6", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.89682855227169 32.778894559361035)", "Foodland Market", "4639 Singleton Blvd", "Dallas", "Open" ]
+, [ "row-jb59.u9yg~v9vm", "00000000-0000-0000-964A-F74BF50EF816", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.68537678355744 32.711478407444595)", "Hunt's Food Store", "7932 Great Trinity Forest Way", "Dallas", "Open" ]
+, [ "row-ht6s_56d7.ujws", "00000000-0000-0000-A7A6-6853F7D5E74B", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.80160989441727 32.7955421586614)", "Whole Foods Market", "McKinney Ave at Routh St", "Dallas", "Opening" ]
+, [ "row-gend_x9yp_bh6w", "00000000-0000-0000-0DC5-8A7D4CBC5F48", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.94425179442763 32.648540537432524)", "Walmart Supercenter", "7001 W Wheatland Rd", "Dallas", "Opening" ]
+, [ "row-h48j-5pxc_d82m", "00000000-0000-0000-C1BA-0B1A85EA8E1B", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.77696465962389 32.79523541305664)", "El Rancho", "4121 Gaston Ave", "Dallas", "Open" ]
+, [ "row-89tj-6x42_q93d", "00000000-0000-0000-9B44-B88652AD989D", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.78973066887855 32.82265960694711)", "Trader Joe's", "Cole at Knox", "Dallas", "Opening" ]
+, [ "row-p2g9-j3uk.2cbm", "00000000-0000-0000-AD41-0B8FC531799B", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.81829405977398 32.85054278260308)", "Trader Joe's", "W. Lovers Ln.", "Dallas", "Opening" ]
+, [ "row-9mhr-3v6u.de8a", "00000000-0000-0000-9833-CBA1E66081C2", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.77033854537072 32.96138728400438)", "Walmart Supercenter", "Coit at Arapaho", "Dallas", "Opening" ]
+, [ "row-29qg~533f.gj5p", "00000000-0000-0000-05A9-67A595592433", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.70216226253544 32.83242635867219)", "Natural Grocers", "9440 Garland Rd", "Dallas", "Open" ]
+, [ "row-66ah~6m2b~8vxb", "00000000-0000-0000-9AF1-6CA110054D2A", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.80549139601939 32.90839923670649)", "Natural Grocers", "11661 Preston Rd", "Dallas", "Open" ]
+, [ "row-46yh-y6tu~wjci", "00000000-0000-0000-2005-C7363BAA8EC4", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.771160915187 32.979735162805405)", "Natural Grocers", "7517 Campbell Rd", "Dallas", "Open" ]
+, [ "row-2zbq-v72a_58kb", "00000000-0000-0000-82A7-6675FCCD3F35", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.80058698282917 32.81595498747488)", "Fresh Market", "3888 Oak Lawn Ave", "Dallas", "Opening" ]
+, [ "row-55pc.7fhw~k8ae", "00000000-0000-0000-0356-8CA167450DFD", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.84020499153215 32.92307166488781)", "Walmart Supercenter", "Midway at LBJ", "Dallas", "Opening" ]
+, [ "row-5rxz-vgg9~wk4n", "00000000-0000-0000-99A0-09D2E23EB7B2", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.84142145029008 32.92244983624195)", "Sam's Club", "Midway at LBJ", "Dallas", "Opening" ]
+, [ "row-ipwf.jbbc_gtsa", "00000000-0000-0000-70F7-1F5D290EFA80", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.7299754928896 32.81286308998786)", "Fresh Market", "Gaston at Garland", "Dallas", "Opening" ]
+, [ "row-btj4.9yg9_kfmi", "00000000-0000-0000-3EEF-CB26F1876476", 0, 1448924247, null, 1448924247, null, "{ }", "POINT (-96.79806219776869 32.77906160726827)", "Urban Orchard", "1500 Jackson St", "Dallas", "Open" ]
+ ]
+}

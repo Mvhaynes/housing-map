@@ -17,6 +17,7 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 // Neighborhood outlines 
 var outlines = 'static/data/dallas_coordinates.json';
 var geojson = d3.json(outlines);
+
 geojson.then(function(data) {
   
   // create neighborhood outlines
@@ -36,4 +37,7 @@ geojson.then(function(data) {
 // Grocery store markers (expands when you zoom) 
 // Police report layers (color coded?)
 
-
+var groceryData = 'static/data/grocerystores.json'
+d3.json(groceryData).then(function(data) {
+  
+})
