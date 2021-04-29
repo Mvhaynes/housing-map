@@ -21,7 +21,19 @@ geojson.then(function(data) {
   
   // create neighborhood outlines
   L.geoJson(data).addTo(myMap);
-  
-  // Add pop ups with neighborhood names for each feature
 
-})
+  // color each neighborhood (according to median house price)
+  // use https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3 to get color scheme 
+
+  // Add pop ups with neighborhood names and median price for each feature
+  
+  
+});
+
+// add mouseover event to show pop ups
+
+// Add ons: 
+// Grocery store markers (expands when you zoom) 
+// Police report layers (color coded?)
+
+
