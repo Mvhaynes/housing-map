@@ -10,15 +10,16 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   tileSize: 512,
   maxZoom: 18,
   zoomOffset: -1,
-  id: "mapbox/streets-v11",
+  id: "mapbox/light-v10",
   accessToken: api_key
 }).addTo(myMap);
+
 
 // Neighborhood outlines 
 var outlines = 'static/data/dallas_coordinates.json';
 
 // House data 
-var housePrices = 'static/data/houses.csv'
+var housePrices = 'static/data/houses.geojson'
 
 // Info box function  
 function popups(feature, layer) {
@@ -28,6 +29,23 @@ function popups(feature, layer) {
     "<p>Median House Price: "
   )
 };
+
+// Neighborhood information 
+d3.json(outlines).then(function(data) {
+  
+  // create neighborhood outlines
+  L.geoJson(data, {
+    style: {
+      "color": "black",
+      "fillColor": 'white',
+      "opacity": 1
+    },
+
+    // Add pop up boxes 
+    onEachFeature: popups 
+  }).addTo(myMap);
+});
+
 
 // color each neighborhood (according to median house price)
 var colorList = ['#f0f9e8','#bae4bc','#7bccc4','#43a2ca','#0868ac']
@@ -52,33 +70,52 @@ function style(data) {
   };
 }
 
-// Get house coordinates 
-d3.csv(housePrices).then(function(data) {
-  data.forEach(d => {
-    if (d.lat && d.lng == "")
-      {console.log(`empty string`)}
-    else {
-      var coordinates = [d.lat, d.lng]
-    };
-    console.log(coordinates);    
-  });;
+function markerSize(size) {
+  return size / 150;
+}
+
+// House information pop ups
+function housePopup(feature, coordinate) {
+  coordinate.bindPopup(
+    "<h3>" + feature.properties.address + "</h3><hr>" +
+    "<p>Price: $" + feature.properties.price + 
+    "<p>Size: " + feature.properties.size + " sq. ft." +
+    "<p> Features: " + feature.properties.beds + " beds" + ", " + feature.properties.baths + " baths"
+  )};
+
+
+// Plot houses
+d3.json(housePrices).then(function (data) {
+
+  var marker = L.geoJson(data.features, {
+    
+    onEachFeature: housePopup,
+
+    pointToLayer: function(feature, coordinate) {
+      console.log(coordinate);
+      
+      var style = {
+        radius: markerSize(feature.properties.size),
+        fillColor: getColor(feature.properties.price),
+        color: "#000",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.8
+      }
+
+      return L.circleMarker(coordinate, style)
+      }
+    })
+
+  marker.addTo(myMap);
 });
 
-// Neighborhood information 
-d3.json(outlines).then(function(data) {
-  
-  // create neighborhood outlines
-  L.geoJson(data, {
-    style: {
-      "color": "black",
-      "fillColor": 'white',
-      "opacity": 1
-    },
 
-    // Add pop up boxes 
-    onEachFeature: popups 
-  }).addTo(myMap);
-});
+// Loop through dallas neighborhoods and add median price ? idk
+function calculateMedian(neighborhood) {
+
+};
+
 
 // Add ons: 
 // Grocery store markers (expands when you zoom) 
