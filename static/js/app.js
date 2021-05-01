@@ -65,6 +65,44 @@ d3.csv(housePrices).then(function(data) {
 // Grocery store markers (expands when you zoom) 
 
 // Police report layers (color coded?)
+var myMap = L.map("map", {
+  center: [32.82, -96.7970],
+  zoom: 11
+});
+
+// Adding heat map
+var heatArray = [];
+
+  for (var i = 0; i < response.length; i++) {
+    var location = response[i].location;
+
+    if (location) {
+      heatArray.push([location.coordinates[1], location.coordinates[0]]);
+    }
+  }
+
+  var heat = L.heatLayer(heatArray, {
+    radius: 20,
+    blur: 35
+  }).addTo(myMap);
+
+// Adding crime markers
+var crimeUrl = "https://www.dallasopendata.com/resource/qv6i-rri7.json$limit=1000";
+
+d3.json(crimeUrl).then(function(response) {
+
+  console.log(response);
+
+  for (var i = 0; i < response.length; i++) {
+    var location = response[i].location;
+
+    if (location) {
+      L.marker([location.coordinates[1], location.coordinates[0]]).addTo(myMap);
+    }
+  }
+
+});
+
 
 var groceryData = 'static/data/grocerystores.json'
 d3.json(groceryData).then(function(data) {
