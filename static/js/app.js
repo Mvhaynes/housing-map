@@ -16,7 +16,9 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 // Neighborhood outlines 
 var outlines = 'static/data/dallas_coordinates.json';
-var geojson = d3.json(outlines);
+
+// House data 
+var housePrices = 'static/data/houses.csv'
 
 // Info box function  
 function popups(feature, layer) {
@@ -27,6 +29,7 @@ function popups(feature, layer) {
   )
 };
 
+// color each neighborhood (according to median house price)
 var colorList = ['#f0f9e8','#bae4bc','#7bccc4','#43a2ca','#0868ac']
 function getColor(price) { // Change numbers later 
   return price > 500000 ? colorList[0] :
@@ -37,7 +40,32 @@ function getColor(price) { // Change numbers later
             colorList[5]
 };
 
-geojson.then(function(data) {
+// Choropleth styling 
+function style(data) {
+  return {
+      fillColor: getColor(data.price),
+      weight: 2,
+      opacity: 1,
+      color: 'white',
+      dashArray: '3',
+      fillOpacity: 0.7
+  };
+}
+
+// Get house coordinates 
+d3.csv(housePrices).then(function(data) {
+  data.forEach(d => {
+    if (d.lat && d.lng == "")
+      {console.log(`empty string`)}
+    else {
+      var coordinates = [d.lat, d.lng]
+    };
+    console.log(coordinates);    
+  });;
+});
+
+// Neighborhood information 
+d3.json(outlines).then(function(data) {
   
   // create neighborhood outlines
   L.geoJson(data, {
@@ -46,27 +74,18 @@ geojson.then(function(data) {
       "fillColor": 'white',
       "opacity": 1
     },
+
+    // Add pop up boxes 
     onEachFeature: popups 
   }).addTo(myMap);
-
-  // color each neighborhood (according to median house price)
-  // use https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3 to get color scheme 
-
-  
 });
-var housePrices = 'static/data/houses.csv'
-d3.csv(housePrices).then(function(data) {
-
-})
-
-// add mouseover event to show pop ups
 
 // Add ons: 
 // Grocery store markers (expands when you zoom) 
 
 // Police report layers (color coded?)
 
-var groceryData = 'static/data/grocerystores.json'
-d3.json(groceryData).then(function(data) {
+// var groceryData = 'static/data/grocerystores.json'
+// d3.json(groceryData).then(function(data) {
 
-})
+// })
