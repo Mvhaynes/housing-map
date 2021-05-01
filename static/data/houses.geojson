@@ -1,0 +1,599 @@
+{
+   "type": "FeatureCollection",
+   "features": [
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.66757,32.762436 ]
+    },
+    "properties": {
+    "index":0,
+    "address":"2827 Curvilinear Ct",
+    "price":245000,
+    "beds":4,
+    "baths":2,
+    "size":2200,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75227
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.82431600000001,32.722084 ]
+    },
+    "properties": {
+    "index":1,
+    "address":"132 W Woodin Blvd",
+    "price":275000,
+    "beds":4,
+    "baths":2,
+    "size":1800,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75224
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.950159,32.637059 ]
+    },
+    "properties": {
+    "index":2,
+    "address":"7311 Hardwood Trl",
+    "price":209900,
+    "beds":3,
+    "baths":2,
+    "size":1902,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75249
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.94662,32.699369 ]
+    },
+    "properties": {
+    "index":3,
+    "address":"3609 Patience Blvd",
+    "price":324990,
+    "beds":4,
+    "baths":2,
+    "size":2067,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75236
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.866104,32.741981 ]
+    },
+    "properties": {
+    "index":4,
+    "address":"2812 Alden Ave",
+    "price":375000,
+    "beds":3,
+    "baths":1,
+    "size":1757,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75211
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.802634,32.684858 ]
+    },
+    "properties": {
+    "index":6,
+    "address":"1337 Kingsley Dr",
+    "price":181900,
+    "beds":3,
+    "baths":2,
+    "size":1262,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75216
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.598872,32.679365000000004 ]
+    },
+    "properties": {
+    "index":7,
+    "address":"13536 Vida Ln",
+    "price":210000,
+    "beds":3,
+    "baths":2,
+    "size":1441,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75253
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.821353,32.730506 ]
+    },
+    "properties": {
+    "index":8,
+    "address":"1402 Seevers Ave",
+    "price":389000,
+    "beds":3,
+    "baths":2,
+    "size":2101,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75216
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.74073,32.862398 ]
+    },
+    "properties": {
+    "index":9,
+    "address":"7036 Winchester St",
+    "price":475000,
+    "beds":3,
+    "baths":2,
+    "size":2089,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75231
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.718028,32.920901 ]
+    },
+    "properties": {
+    "index":10,
+    "address":"12618 Trenton Dr",
+    "price":375000,
+    "beds":4,
+    "baths":3,
+    "size":2463,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75243
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.845093,32.67694 ]
+    },
+    "properties": {
+    "index":11,
+    "address":"1415 Reynoldston Ln",
+    "price":187434,
+    "beds":3,
+    "baths":2,
+    "size":1602,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75232
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.799077,32.714197999999996 ]
+    },
+    "properties": {
+    "index":12,
+    "address":"2720 E Atoll Dr",
+    "price":225000,
+    "beds":5,
+    "baths":2,
+    "size":2500,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75216
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.651386,32.686745 ]
+    },
+    "properties": {
+    "index":13,
+    "address":"9835 Whistler Dr",
+    "price":275000,
+    "beds":4,
+    "baths":3,
+    "size":2482,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75217
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.847349,32.722586 ]
+    },
+    "properties": {
+    "index":14,
+    "address":"1627 Wilbur St",
+    "price":325000,
+    "beds":3,
+    "baths":2,
+    "size":1820,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75224
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.671462,32.74519 ]
+    },
+    "properties": {
+    "index":15,
+    "address":"1920 Oak Hill Cir",
+    "price":178374,
+    "beds":4,
+    "baths":2,
+    "size":1302,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75217
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.695104,32.848586 ]
+    },
+    "properties": {
+    "index":16,
+    "address":"10548 Wyatt St",
+    "price":499999,
+    "beds":4,
+    "baths":3,
+    "size":2522,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75218
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.89835500000001,32.784418 ]
+    },
+    "properties": {
+    "index":17,
+    "address":"3408 Hammerly Dr",
+    "price":384900,
+    "beds":3,
+    "baths":3,
+    "size":2000,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75212
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.879984,32.890625 ]
+    },
+    "properties": {
+    "index":18,
+    "address":"10525 Channel Dr",
+    "price":299000,
+    "beds":4,
+    "baths":2,
+    "size":2151,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75229
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.710583,32.822055 ]
+    },
+    "properties": {
+    "index":19,
+    "address":"8648 Forest Hills Blvd",
+    "price":650000,
+    "beds":3,
+    "baths":3,
+    "size":1712,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75218
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.803904,32.674341 ]
+    },
+    "properties": {
+    "index":20,
+    "address":"6015 Sunny Crest Ln",
+    "price":180000,
+    "beds":4,
+    "baths":3,
+    "size":1578,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75241
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.878591,32.737140999999994 ]
+    },
+    "properties": {
+    "index":21,
+    "address":"3531 Burlingdell Ave",
+    "price":319000,
+    "beds":4,
+    "baths":2,
+    "size":1720,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75211
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.873914,32.885233 ]
+    },
+    "properties": {
+    "index":22,
+    "address":"10211 Carry Back Cir",
+    "price":485000,
+    "beds":3,
+    "baths":3,
+    "size":2042,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75229
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.906497,32.788000000000004 ]
+    },
+    "properties": {
+    "index":23,
+    "address":"3722 Ingersoll St",
+    "price":299900,
+    "beds":4,
+    "baths":2,
+    "size":1608,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75212
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.688222,32.856489 ]
+    },
+    "properties": {
+    "index":24,
+    "address":"11232 Lanewood Cir",
+    "price":435000,
+    "beds":3,
+    "baths":2,
+    "size":1653,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75218
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.704458,32.846422 ]
+    },
+    "properties": {
+    "index":25,
+    "address":"9747 E Lake Highlands Dr",
+    "price":395000,
+    "beds":3,
+    "baths":2,
+    "size":1500,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75218
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.823803,32.656177 ]
+    },
+    "properties": {
+    "index":26,
+    "address":"7616 Texridge Dr",
+    "price":209000,
+    "beds":3,
+    "baths":2,
+    "size":1478,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75232
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.85412,32.728055 ]
+    },
+    "properties": {
+    "index":27,
+    "address":"1530 S Montreal Ave",
+    "price":327900,
+    "beds":2,
+    "baths":2,
+    "size":1122,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75208
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.737319,32.804125 ]
+    },
+    "properties": {
+    "index":28,
+    "address":"6926 Vivian Ave",
+    "price":549900,
+    "beds":2,
+    "baths":2,
+    "size":1444,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75223
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.85798199999999,32.738436 ]
+    },
+    "properties": {
+    "index":29,
+    "address":"2427 Catherine St",
+    "price":329500,
+    "beds":2,
+    "baths":2,
+    "size":1322,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75211
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.740335,32.818009 ]
+    },
+    "properties": {
+    "index":30,
+    "address":"6882 Avalon Ave",
+    "price":829500,
+    "beds":3,
+    "baths":2,
+    "size":1804,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75214
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.702538,32.875234999999996 ]
+    },
+    "properties": {
+    "index":31,
+    "address":"10619 Lakemere Dr",
+    "price":499900,
+    "beds":3,
+    "baths":2,
+    "size":1647,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75238
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.742275,32.803074 ]
+    },
+    "properties": {
+    "index":32,
+    "address":"818 Cordova St",
+    "price":650000,
+    "beds":3,
+    "baths":2,
+    "size":1814,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75223
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -96.829962,32.908929 ]
+    },
+    "properties": {
+    "index":33,
+    "address":"11727 Welch Rd",
+    "price":699000,
+    "beds":3,
+    "baths":3,
+    "size":2491,
+    "city":" Dallas",
+    "state":"TX",
+    "zipcode":75229
+    }
+  }
+]
+}
