@@ -18,26 +18,55 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 var outlines = 'static/data/dallas_coordinates.json';
 var geojson = d3.json(outlines);
 
+// Info box function  
+function popups(feature, layer) {
+  layer.bindPopup(
+    "<h3>" + feature.properties.name + "</h3><hr>" +
+    "<p>Median Income: " +
+    "<p>Median House Price: "
+  )
+};
+
+var colorList = ['#f0f9e8','#bae4bc','#7bccc4','#43a2ca','#0868ac']
+function getColor(price) { // Change numbers later 
+  return price > 500000 ? colorList[0] :
+    price > 400000 ? colorList[1] :
+      price > 300000 ? colorList[2] :
+        price > 200000 ? colorList[3] :
+          price > 100000 ? colorList[4] :
+            colorList[5]
+};
+
 geojson.then(function(data) {
   
   // create neighborhood outlines
-  L.geoJson(data).addTo(myMap);
+  L.geoJson(data, {
+    style: {
+      "color": "black",
+      "fillColor": 'white',
+      "opacity": 1
+    },
+    onEachFeature: popups 
+  }).addTo(myMap);
 
   // color each neighborhood (according to median house price)
   // use https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3 to get color scheme 
 
-  // Add pop ups with neighborhood names and median price for each feature
-  
   
 });
+var housePrices = 'static/data/houses.csv'
+d3.csv(housePrices).then(function(data) {
+
+})
 
 // add mouseover event to show pop ups
 
 // Add ons: 
 // Grocery store markers (expands when you zoom) 
+
 // Police report layers (color coded?)
 
 var groceryData = 'static/data/grocerystores.json'
 d3.json(groceryData).then(function(data) {
-  
+
 })
