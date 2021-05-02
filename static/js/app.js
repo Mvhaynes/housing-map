@@ -129,7 +129,7 @@ d3.json(crimeReports).then(function(response) {
 
   L.heatLayer(heatArray, {
     radius: 80,
-    blur: -1
+    blur: 40
   }).addTo(myMap);
 })
 
