@@ -110,23 +110,21 @@ function calculateMedian(neighborhood) {};
 
 
 // Police report heat layer 
-
-
 d3.json(crimeReports).then(function(response) {
   
-  // console.log(response[0].geocoded_column);
   var heatArray = [];
 
+  // Loop through data and add coordinates to array 
   for (var i = 0; i < response.length; i++) {
     
     var location = response[i].geocoded_column;
 
     if (location.latitude) {
-
       heatArray.push([location.latitude, location.longitude])
+      }
     }
-  }
-
+    
+  // Create heat layer 
   L.heatLayer(heatArray, {
     radius: 80,
     blur: 40
