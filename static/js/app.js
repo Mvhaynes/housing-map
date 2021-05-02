@@ -75,7 +75,6 @@ d3.json(outlines).then(function (data) {
   }).addTo(myMap);
 });
 
-
 function markerSize(size) { // might not use 
   return size / 200;
 }
@@ -88,7 +87,6 @@ d3.json(housePrices).then(function (data) {
     onEachFeature: housePopup,
 
     pointToLayer: function (feature, coordinate) {
-      console.log(coordinate);
 
       var style = {
         radius: 10,
@@ -111,42 +109,47 @@ d3.json(housePrices).then(function (data) {
 function calculateMedian(neighborhood) {};
 
 
-// Add ons: 
-
-// Grocery store markers (expands when you zoom) 
-
 // Police report heat layer 
-var heatArray = [];
 
-for (var i = 0; i < response.length; i++) {
-  var location = response[i].location;
 
-  if (location) {
-    heatArray.push([location.coordinates[1], location.coordinates[0]]);
-  }
-}
-
-var heat = L.heatLayer(heatArray, {
-  radius: 20,
-  blur: 35
-}).addTo(myMap);
-
-// Adding crime markers
-var crimeUrl = "https://www.dallasopendata.com/resource/qv6i-rri7.json$limit=1000";
-
-d3.json(crimeUrl).then(function (response) {
-
-  console.log(response);
+d3.json(crimeReports).then(function(response) {
+  
+  // console.log(response[0].geocoded_column);
+  var heatArray = [];
 
   for (var i = 0; i < response.length; i++) {
-    var location = response[i].location;
+    
+    var location = response[i].geocoded_column;
 
-    if (location) {
-      L.marker([location.coordinates[1], location.coordinates[0]]).addTo(myMap);
+    if (location.latitude) {
+
+      heatArray.push([location.latitude, location.longitude])
     }
   }
 
-});
+  L.heatLayer(heatArray, {
+    radius: 80,
+    blur: -1
+  }).addTo(myMap);
+})
+
+
+// Adding crime markers
+// var crimeUrl = "https://www.dallasopendata.com/resource/qv6i-rri7.json$limit=1000";
+
+// d3.json(crimeUrl).then(function (response) {
+
+//   console.log(response);
+
+//   for (var i = 0; i < response.length; i++) {
+//     var location = response[i].location;
+
+//     if (location) {
+//       L.marker([location.coordinates[1], location.coordinates[0]]).addTo(myMap);
+//     }
+//   }
+
+// });
 
 
 // var groceryData = 'static/data/grocerystores.json'
