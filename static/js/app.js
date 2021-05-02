@@ -31,8 +31,8 @@ function popups(feature, layer) {
 };
 
 // Neighborhood information 
-d3.json(outlines).then(function(data) {
-  
+d3.json(outlines).then(function (data) {
+
   // create neighborhood outlines
   L.geoJson(data, {
     style: {
@@ -42,60 +42,65 @@ d3.json(outlines).then(function(data) {
     },
 
     // Add pop up boxes 
-    onEachFeature: popups 
+    onEachFeature: popups
   }).addTo(myMap);
 });
 
 
 // color each neighborhood (according to median house price)
-var colorList = ['#f0f9e8','#bae4bc','#7bccc4','#43a2ca','#0868ac']
+var colorList = ['#ffffd9','#edf8b1','#c7e9b4','#7fcdbb','#41b6c4','#1d91c0','#225ea8','#253494','#081d58']
 function getColor(price) { // Change numbers later 
-  return price > 500000 ? colorList[0] :
-    price > 400000 ? colorList[1] :
-      price > 300000 ? colorList[2] :
-        price > 200000 ? colorList[3] :
-          price > 100000 ? colorList[4] :
-            colorList[5]
+  return price > 4000000 ? colorList[8] :
+    price > 1500000 ? colorList[7] :
+      price > 850000 ? colorList[6] :
+        price > 650000 ? colorList[5] :
+          price > 550000 ? colorList[4] :
+            price > 350000 ? colorList[3] :
+              price > 250000 ? colorList[2] :
+                price > 150000 ? colorList[1] :
+                  colorList[0]
 };
 
 // Choropleth styling 
 function style(data) {
   return {
-      fillColor: getColor(data.price),
-      weight: 2,
-      opacity: 1,
-      color: 'white',
-      dashArray: '3',
-      fillOpacity: 0.7
+    fillColor: getColor(data.price),
+    weight: 2,
+    opacity: 1,
+    color: 'white',
+    dashArray: '3',
+    fillOpacity: 0.7
   };
 }
 
 function markerSize(size) {
-  return size / 150;
+  return size / 200;
 }
 
 // House information pop ups
 function housePopup(feature, coordinate) {
   coordinate.bindPopup(
     "<h3>" + feature.properties.address + "</h3><hr>" +
-    "<p>Price: $" + feature.properties.price + 
+    "<p>Price: $" + feature.properties.price +
     "<p>Size: " + feature.properties.size + " sq. ft." +
-    "<p> Features: " + feature.properties.beds + " beds" + ", " + feature.properties.baths + " baths"
-  )};
+    "<p>Features: " + feature.properties.beds + " beds" + ", " + feature.properties.baths + " baths" +
+    "<p>Type: " + feature.properties.type
+  )
+};
 
 
 // Plot houses
 d3.json(housePrices).then(function (data) {
 
   var marker = L.geoJson(data.features, {
-    
+
     onEachFeature: housePopup,
 
-    pointToLayer: function(feature, coordinate) {
+    pointToLayer: function (feature, coordinate) {
       console.log(coordinate);
-      
+
       var style = {
-        radius: markerSize(feature.properties.size),
+        radius: 10,
         fillColor: getColor(feature.properties.price),
         color: "#000",
         weight: 1,
@@ -104,8 +109,8 @@ d3.json(housePrices).then(function (data) {
       }
 
       return L.circleMarker(coordinate, style)
-      }
-    })
+    }
+  })
 
   marker.addTo(myMap);
 });
@@ -129,23 +134,23 @@ var myMap = L.map("map", {
 // Adding heat map
 var heatArray = [];
 
-  for (var i = 0; i < response.length; i++) {
-    var location = response[i].location;
+for (var i = 0; i < response.length; i++) {
+  var location = response[i].location;
 
-    if (location) {
-      heatArray.push([location.coordinates[1], location.coordinates[0]]);
-    }
+  if (location) {
+    heatArray.push([location.coordinates[1], location.coordinates[0]]);
   }
+}
 
-  var heat = L.heatLayer(heatArray, {
-    radius: 20,
-    blur: 35
-  }).addTo(myMap);
+var heat = L.heatLayer(heatArray, {
+  radius: 20,
+  blur: 35
+}).addTo(myMap);
 
 // Adding crime markers
 var crimeUrl = "https://www.dallasopendata.com/resource/qv6i-rri7.json$limit=1000";
 
-d3.json(crimeUrl).then(function(response) {
+d3.json(crimeUrl).then(function (response) {
 
   console.log(response);
 
