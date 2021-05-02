@@ -102,7 +102,7 @@ d3.json(housePrices).then(function (data) {
       var style = {
         radius: 10,
         fillColor: getColor(feature.properties.price),
-        color: "#000",
+        color: 'black',
         weight: 1,
         opacity: 1,
         fillOpacity: 0.8
