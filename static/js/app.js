@@ -1,3 +1,13 @@
+// Neighborhood outlines 
+var outlines = 'static/data/dallas_coordinates.json';
+
+// House data 
+var housePrices = 'static/data/houses.geojson';
+
+// Crime reports 
+var crimeReports = 'static/data/police_reports.json';
+
+
 // Center around Dallas
 var myMap = L.map("map", {
   center: [32.82, -96.7970],
@@ -15,11 +25,19 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(myMap);
 
 
-// Neighborhood outlines 
-var outlines = 'static/data/dallas_coordinates.json';
-
-// House data 
-var housePrices = 'static/data/houses.geojson'
+// Color function based on house price 
+var colorList = ['#ffffd9','#edf8b1','#c7e9b4','#7fcdbb','#41b6c4','#1d91c0','#225ea8','#253494','#081d58']
+function getColor(price) { // Change numbers later 
+  return price > 4000000 ? colorList[8] :
+    price > 1500000 ? colorList[7] :
+      price > 850000 ? colorList[6] :
+        price > 650000 ? colorList[5] :
+          price > 550000 ? colorList[4] :
+            price > 350000 ? colorList[3] :
+              price > 250000 ? colorList[2] :
+                price > 150000 ? colorList[1] :
+                  colorList[0]
+};
 
 // Info box function  
 function popups(feature, layer) {
@@ -30,7 +48,18 @@ function popups(feature, layer) {
   )
 };
 
-// Neighborhood information 
+// House information pop ups
+function housePopup(feature, coordinate) {
+  coordinate.bindPopup(
+    "<h3>" + feature.properties.address + "</h3><hr>" +
+    "<p>Price: $" + feature.properties.price +
+    "<p>Size: " + feature.properties.size + " sq. ft." +
+    "<p>Features: " + feature.properties.beds + " beds" + ", " + feature.properties.baths + " baths" +
+    "<p>Type: " + feature.properties.type
+  )
+};
+
+// Neighborhood outline  
 d3.json(outlines).then(function (data) {
 
   // create neighborhood outlines
@@ -47,47 +76,9 @@ d3.json(outlines).then(function (data) {
 });
 
 
-// color each neighborhood (according to median house price)
-var colorList = ['#ffffd9','#edf8b1','#c7e9b4','#7fcdbb','#41b6c4','#1d91c0','#225ea8','#253494','#081d58']
-function getColor(price) { // Change numbers later 
-  return price > 4000000 ? colorList[8] :
-    price > 1500000 ? colorList[7] :
-      price > 850000 ? colorList[6] :
-        price > 650000 ? colorList[5] :
-          price > 550000 ? colorList[4] :
-            price > 350000 ? colorList[3] :
-              price > 250000 ? colorList[2] :
-                price > 150000 ? colorList[1] :
-                  colorList[0]
-};
-
-// Choropleth styling 
-function style(data) {
-  return {
-    fillColor: getColor(data.price),
-    weight: 2,
-    opacity: 1,
-    color: 'white',
-    dashArray: '3',
-    fillOpacity: 0.7
-  };
-}
-
-function markerSize(size) {
+function markerSize(size) { // might not use 
   return size / 200;
 }
-
-// House information pop ups
-function housePopup(feature, coordinate) {
-  coordinate.bindPopup(
-    "<h3>" + feature.properties.address + "</h3><hr>" +
-    "<p>Price: $" + feature.properties.price +
-    "<p>Size: " + feature.properties.size + " sq. ft." +
-    "<p>Features: " + feature.properties.beds + " beds" + ", " + feature.properties.baths + " baths" +
-    "<p>Type: " + feature.properties.type
-  )
-};
-
 
 // Plot houses
 d3.json(housePrices).then(function (data) {
@@ -117,21 +108,14 @@ d3.json(housePrices).then(function (data) {
 
 
 // Loop through dallas neighborhoods and add median price ? idk
-function calculateMedian(neighborhood) {
-
-};
+function calculateMedian(neighborhood) {};
 
 
 // Add ons: 
+
 // Grocery store markers (expands when you zoom) 
 
-// Police report layers (color coded?)
-var myMap = L.map("map", {
-  center: [32.82, -96.7970],
-  zoom: 11
-});
-
-// Adding heat map
+// Police report heat layer 
 var heatArray = [];
 
 for (var i = 0; i < response.length; i++) {
