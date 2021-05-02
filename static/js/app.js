@@ -7,6 +7,8 @@ var housePrices = 'static/data/houses.geojson';
 // Crime reports 
 var crimeReports = 'static/data/police_reports.json';
 
+// Grocery store data
+var groceryStores = 'static/data/grocerystores.json';
 
 // Center around Dallas
 var myMap = L.map("map", {
@@ -123,7 +125,7 @@ d3.json(crimeReports).then(function(response) {
       heatArray.push([location.latitude, location.longitude])
       }
     }
-    
+
   // Create heat layer 
   L.heatLayer(heatArray, {
     radius: 80,
