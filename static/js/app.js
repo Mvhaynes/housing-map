@@ -1,3 +1,15 @@
+// Neighborhood outlines 
+var outlines = 'static/data/dallas_coordinates.json';
+
+// House data 
+var housePrices = 'static/data/houses.geojson';
+
+// Crime reports 
+var crimeReports = 'static/data/police_reports.json';
+
+// Grocery store data
+var groceryStores = 'static/data/grocerystores.json';
+
 // Center around Dallas
 var myMap = L.map("map", {
   center: [32.82, -96.7970],
@@ -10,13 +22,47 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   tileSize: 512,
   maxZoom: 18,
   zoomOffset: -1,
-  id: "mapbox/streets-v11",
+  id: "mapbox/light-v10",
   accessToken: api_key
 }).addTo(myMap);
 
-// Neighborhood outlines 
-var outlines = 'static/data/dallas_coordinates.json';
-var geojson = d3.json(outlines);
+
+// Color function based on house price 
+var colorList = ['#ffffd9','#edf8b1','#c7e9b4','#7fcdbb','#41b6c4','#1d91c0','#225ea8','#253494','#081d58']
+function getColor(price) { // Change numbers later 
+  return price > 4000000 ? colorList[8] :
+    price > 1500000 ? colorList[7] :
+      price > 850000 ? colorList[6] :
+        price > 650000 ? colorList[5] :
+          price > 550000 ? colorList[4] :
+            price > 350000 ? colorList[3] :
+              price > 250000 ? colorList[2] :
+                price > 150000 ? colorList[1] :
+                  colorList[0]
+};
+
+var colorList = ['#ffffd9','#edf8b1','#c7e9b4','#7fcdbb','#41b6c4','#1d91c0','#225ea8','#253494','#081d58']
+function colorMap(avg) {  
+  return avg > 4000000 ? colorList[8] :
+    avg > 1500000 ? colorList[7] :
+      avg > 850000 ? colorList[6] :
+        avg > 650000 ? colorList[5] :
+          avg > 550000 ? colorList[4] :
+            avg > 350000 ? colorList[3] :
+              avg > 250000 ? colorList[2] :
+                avg > 150000 ? colorList[1] :
+                  colorList[0],
+  console.log( avg > 4000000 ? colorList[8] : // to check function 
+    avg > 1500000 ? colorList[7] :
+      avg > 850000 ? colorList[6] :
+        avg > 650000 ? colorList[5] :
+          avg > 550000 ? colorList[4] :
+            avg > 350000 ? colorList[3] :
+              avg > 250000 ? colorList[2] :
+                avg > 150000 ? colorList[1] :
+                  colorList[0]
+  )};
+
 
 // Info box function  
 function popups(feature, layer) {
@@ -47,12 +93,12 @@ d3.json(outlines).then(function (data) {
     var fill = {
       fillColor: returnColor(feature.properties.name),
       weight: 2,
-      opacity: 1,   
+      opacity: 1,
       color: 'black',
       dashArray: '3',
       fillOpacity: 0.7
     }
-  };
+  }
 
   // create neighborhood outlines
   L.geoJson(data.features, {
@@ -78,7 +124,7 @@ d3.json(outlines).then(function (data) {
 // Plot houses
 d3.json(housePrices).then(function (data) {
 
-  var houseMarkers = L.geoJson(data.features, {
+  var marker = L.geoJson(data.features, {
 
     onEachFeature: housePopup,
 
@@ -95,37 +141,11 @@ d3.json(housePrices).then(function (data) {
 
       return L.circleMarker(coordinate, style)
     }
-  });
+  })
 
-// Police report layers (color coded?)
-var myMap = L.map("map", {
-  center: [32.82, -96.7970],
-  zoom: 11
+  marker.addTo(myMap);
 });
 
-
-// Police report heat layer 
-d3.json(crimeReports).then(function(response) {
-  
-  var heatArray = [];
-
-  // Loop through data and add coordinates to array 
-  for (var i = 0; i < response.length; i++) {
-    
-    var location = response[i].geocoded_column;
-
-    if (location.latitude) {
-      heatArray.push([location.latitude, location.longitude])
-      }
-    };
-
-  // Create heat layer 
-  var crimeLayer = L.heatLayer(heatArray, {
-    radius: 80,
-    blur: 40
-  }).addTo(myMap);
-
- 
 
 function calculateAvg(place) {
   d3.json('static/data/joined.json').then(function(data) {
@@ -145,8 +165,8 @@ function calculateAvg(place) {
         neighborhoodList[neighborhood] = 1;
         neighborhoodList[neighborhood + ' price'] = (feature.properties.price);
         neighborhoodAvg[neighborhood] = neighborhoodList[neighborhood + ' price']
-      }
-    });
+      };
+    })
 
     // Fill in empty data (Do an auto loop later)
     neighborhoodAvg['Design District'] = 0;
@@ -166,52 +186,29 @@ function calculateAvg(place) {
 function returnColor(place) { // delete later this is just to check the function 
   calculateAvg(place);
   console.log(place, calculateAvg(place)) // check 
-};
-// House marker layer and crime heat map layer
-var houseLayer = L.layerGroup(houseMarkers);
-//var crimeLayer = L.layerGroup(heatArray);
+}
 
-// Create background
-// Light base 
-var light = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-  attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-  tileSize: 512,
-  maxZoom: 18,
-  zoomOffset: -1,
-  id: "mapbox/light-v10",
-  accessToken: api_key
-}).addTo(myMap);
-// Dark base
-var dark = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-  attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-  tileSize: 512,
-  maxZoom: 18,
-  zoomOffset: -1,
-  id: "mapbox/dark-v10",
-  accessToken: api_key
-}).addTo(myMap);
+// Police report heat layer 
+d3.json(crimeReports).then(function(response) {
+  
+  var heatArray = [];
 
-//Base map variables
-var baseMaps = {
-  Light: light,
-  Dark: dark
-};
+  // Loop through data and add coordinates to array 
+  for (var i = 0; i < response.length; i++) {
+    
+    var location = response[i].geocoded_column;
 
-//Overlay map variables
-var overlayMaps = {
-  Houses: houseLayer
-  Crime: crimeLayer
-};
+    if (location.latitude) {
+      heatArray.push([location.latitude, location.longitude])
+      }
+    }
 
-// Center around Dallas
-var myMap = L.map("map", {
-  center: [32.82, -96.7970],
-  zoom: 11
-  layers: [light, dark, crimeLayer, houseLayer]
-});
-
-// Control for layers
-L.control.groupedLayers(baseMaps, overlayMaps).addTo(map);
+  // Create heat layer 
+  L.heatLayer(heatArray, {
+    radius: 80,
+    blur: 40
+  }).addTo(myMap);
+})
 
 // Adding crime markers
 // var crimeUrl = "https://www.dallasopendata.com/resource/qv6i-rri7.json$limit=1000";
