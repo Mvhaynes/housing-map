@@ -147,9 +147,6 @@ d3.json(housePrices).then(function (data) {
 });
 
 
-
- 
-
 function calculateAvg(place) {
   d3.json('static/data/joined.json').then(function(data) {
     var neighborhoodList = [];
@@ -191,7 +188,6 @@ function returnColor(place) { // delete later this is just to check the function
   console.log(place, calculateAvg(place)) // check 
 }
 
-
 // Police report heat layer 
 d3.json(crimeReports).then(function(response) {
   
@@ -213,7 +209,6 @@ d3.json(crimeReports).then(function(response) {
     blur: 40
   }).addTo(myMap);
 })
-
 
 // Adding crime markers
 // var crimeUrl = "https://www.dallasopendata.com/resource/qv6i-rri7.json$limit=1000";
