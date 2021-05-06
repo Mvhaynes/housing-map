@@ -10,23 +10,6 @@ var crimeReports = 'static/data/police_reports.json';
 // Grocery store data
 var groceryStores = 'static/data/grocerystores.json';
 
-// Center around Dallas
-var myMap = L.map("map", {
-  center: [32.82, -96.7970],
-  zoom: 11
-});
-
-// Create background 
-L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-  attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-  tileSize: 512,
-  maxZoom: 18,
-  zoomOffset: -1,
-  id: "mapbox/light-v10",
-  accessToken: api_key
-}).addTo(myMap);
-
-
 // Color function based on house price 
 var colorList = ['#ffffd9','#edf8b1','#c7e9b4','#7fcdbb','#41b6c4','#1d91c0','#225ea8','#253494','#081d58']
 function getColor(price) { // Change numbers later 
@@ -62,7 +45,6 @@ function colorMap(avg) {
                 avg > 150000 ? colorList[1] :
                   colorList[0]
   )};
-
 
 // Info box function  
 function popups(feature, layer) {
@@ -106,7 +88,7 @@ d3.json(outlines).then(function (data) {
     onEachFeature: function (feature, coordinates) {
       var style = {
       "color": "black",
-      "fillColor": returnColor(feature.properties.name),
+      "fillColor": "white",
       "opacity": 1
       }
     },
@@ -114,7 +96,7 @@ d3.json(outlines).then(function (data) {
     // onEachFeature: popups,
     // onEachFeature: style
     // })
-  }).addTo(myMap)
+  })
 });
 
 // function markerSize(size) { // might not use 
@@ -139,49 +121,46 @@ d3.json(housePrices).then(function (data) {
         fillOpacity: 0.8
       }
 
-      return L.circleMarker(coordinate, style)
+      return L.circleMarker(coordinate, style);
     }
   })
 
-  marker.addTo(myMap);
 });
 
+// function calculateAvg(place) {
+//   d3.json('static/data/joined.json').then(function(data) {
+//     var neighborhoodList = [];
+//     var neighborhoodAvg = [];
 
-function calculateAvg(place) {
-  d3.json('static/data/joined.json').then(function(data) {
-    var neighborhoodList = [];
-    var neighborhoodAvg = [];
-
-    // Loop through dallas neighborhoods and calculate average house price 
-    data.features.forEach(feature => {
-      var neighborhood = feature.properties.name;
+//     // Loop through dallas neighborhoods and calculate average house price 
+//     data.features.forEach(feature => {
+//       var neighborhood = feature.properties.name;
       
-      if (neighborhood in neighborhoodList) {
-        neighborhoodList[neighborhood] += 1;
-        neighborhoodList[neighborhood + ' price'] = neighborhoodList[neighborhood + ' price'] + (feature.properties.price);
-        neighborhoodAvg[neighborhood] = neighborhoodList[neighborhood + ' price'] / neighborhoodList[neighborhood];
-      }
-      else {
-        neighborhoodList[neighborhood] = 1;
-        neighborhoodList[neighborhood + ' price'] = (feature.properties.price);
-        neighborhoodAvg[neighborhood] = neighborhoodList[neighborhood + ' price']
-      };
-    })
+//       if (neighborhood in neighborhoodList) {
+//         neighborhoodList[neighborhood] += 1;
+//         neighborhoodList[neighborhood + ' price'] = neighborhoodList[neighborhood + ' price'] + (feature.properties.price);
+//         neighborhoodAvg[neighborhood] = neighborhoodList[neighborhood + ' price'] / neighborhoodList[neighborhood];
+//       }
+//       else {
+//         neighborhoodList[neighborhood] = 1;
+//         neighborhoodList[neighborhood + ' price'] = (feature.properties.price);
+//         neighborhoodAvg[neighborhood] = neighborhoodList[neighborhood + ' price']
+//       };
+//     })
 
-    // Fill in empty data (Do an auto loop later)
-    neighborhoodAvg['Design District'] = 0;
-    neighborhoodAvg['University Park'] = 0;
-    neighborhoodAvg['Knox'] = 0;
-    neighborhoodAvg['South Dallas'] = 0;
+//     // Fill in empty data (Do an auto loop later)
+//     neighborhoodAvg['Design District'] = 0;
+//     neighborhoodAvg['University Park'] = 0;
+//     neighborhoodAvg['Knox'] = 0;
+//     neighborhoodAvg['South Dallas'] = 0;
     
-    var avg = neighborhoodAvg[place];
+//     var avg = neighborhoodAvg[place];
     
-    console.log(avg)
+//     console.log(avg)
     
-    colorMap(avg)
-  })
-};
-
+//     colorMap(avg)
+//   })
+// };
 
 function returnColor(place) { // delete later this is just to check the function 
   calculateAvg(place);
@@ -204,11 +183,43 @@ d3.json(crimeReports).then(function(response) {
     }
 
   // Create heat layer 
-  L.heatLayer(heatArray, {
+var crimeHeat = L.heatLayer(heatArray, {
     radius: 80,
     blur: 40
   }).addTo(myMap);
 })
+
+// Create background 
+var base = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+  attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
+  tileSize: 512,
+  maxZoom: 18,
+  zoomOffset: -1,
+  id: "mapbox/light-v10",
+  accessToken: api_key
+});
+
+// Center around Dallas
+var myMap = L.map("map", {
+  center: [32.82, -96.7970],        
+  zoom: 11,
+  //layers: [base, houseLayer]
+});
+
+//var houseLayer = L.layerGroup(marker);
+//var crimeLayer = L.layerGroup(crimeHeat);
+
+var baseMaps = {
+  "Map": base
+};
+
+//var overlayMaps = {
+  //"Houses": houseLayer,
+  //"Crime Level": crimeLayer
+//};
+
+
+L.control.layers(baseMaps, overlayMaps).addTo(myMap);
 
 // Adding crime markers
 // var crimeUrl = "https://www.dallasopendata.com/resource/qv6i-rri7.json$limit=1000";
@@ -226,9 +237,3 @@ d3.json(crimeReports).then(function(response) {
 //   }
 
 // });
-
-
-// var groceryData = 'static/data/grocerystores.json'
-// d3.json(groceryData).then(function(data) {
-
-// })
