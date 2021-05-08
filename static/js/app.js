@@ -1,5 +1,5 @@
 // Neighborhood outlines 
-var outlines = 'static/data/dallas_coordinates.json';
+var outlines = 'static/data/averages.json';
 
 // House data 
 var housePrices = 'static/data/houses.geojson';
@@ -28,48 +28,37 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 
 // Color function based on house price 
-var colorList = ['#ffffd9','#edf8b1','#c7e9b4','#7fcdbb','#41b6c4','#1d91c0','#225ea8','#253494','#081d58']
-function getColor(price) { // Change numbers later 
-  return price > 4000000 ? colorList[8] :
-    price > 1500000 ? colorList[7] :
-      price > 850000 ? colorList[6] :
-        price > 650000 ? colorList[5] :
-          price > 550000 ? colorList[4] :
-            price > 350000 ? colorList[3] :
-              price > 250000 ? colorList[2] :
-                price > 150000 ? colorList[1] :
-                  colorList[0]
-};
+// var markerColor = ['#ffffd9','#edf8b1','#c7e9b4','#7fcdbb','#41b6c4','#1d91c0','#225ea8','#253494','#081d58']
+// function getColor(price) { // Change numbers later 
+//   return price > 4000000 ? markerColor[8] :
+//     price > 1500000 ? markerColor[7] :
+//       price > 850000 ? markerColor[6] :
+//         price > 650000 ? markerColor[5] :
+//           price > 550000 ? markerColor[4] :
+//             price > 350000 ? markerColor[3] :
+//               price > 250000 ? markerColor[2] :
+//                 price > 150000 ? markerColor[1] :
+//                 markerColor[0]
+// };
 
-var colorList = ['#ffffd9','#edf8b1','#c7e9b4','#7fcdbb','#41b6c4','#1d91c0','#225ea8','#253494','#081d58']
+var colorList = ['white','#edf8b1','#c7e9b4','#7fcdbb','#41b6c4','#1d91c0','#225ea8','#253494','#081d58']
 function colorMap(avg) {  
-  return avg > 4000000 ? colorList[8] :
-    avg > 1500000 ? colorList[7] :
-      avg > 850000 ? colorList[6] :
-        avg > 650000 ? colorList[5] :
-          avg > 550000 ? colorList[4] :
-            avg > 350000 ? colorList[3] :
-              avg > 250000 ? colorList[2] :
-                avg > 150000 ? colorList[1] :
-                  colorList[0],
-  console.log( avg > 4000000 ? colorList[8] : // to check function 
-    avg > 1500000 ? colorList[7] :
-      avg > 850000 ? colorList[6] :
-        avg > 650000 ? colorList[5] :
-          avg > 550000 ? colorList[4] :
-            avg > 350000 ? colorList[3] :
-              avg > 250000 ? colorList[2] :
-                avg > 150000 ? colorList[1] :
-                  colorList[0]
-  )};
+  return avg > 1000000 ? colorList[8] :
+    avg > 800000 ? colorList[7] :
+      avg > 600000 ? colorList[6] :
+        avg > 500000 ? colorList[5] :
+          avg > 400000 ? colorList[4] :
+            avg > 300000 ? colorList[3] :
+              avg > 200000 ? colorList[2] :
+                avg > 100000 ? colorList[1] :
+                  colorList[0]};
 
 
 // Info box function  
 function popups(feature, layer) {
   layer.bindPopup(
     "<h3>" + feature.properties.name + "</h3><hr>" +
-    "<p>Median Income: " +
-    "<p>Average House Price: "
+    "<p>Average House Price: $" + feature.properties.avg // figure out how to print not enough info for avg = 0 
   )
 };
 
@@ -84,112 +73,52 @@ function housePopup(feature, coordinate) {
   )
 };
 
-// Neighborhood outline  
-d3.json(outlines).then(function (data) {
-  
-  var features = data.features;
-  
-  function style(feature) {
-    var fill = {
-      fillColor: returnColor(feature.properties.name),
+function style(feature) {
+    return {
+      fillColor: colorMap(feature.properties.avg),
       weight: 2,
       opacity: 1,
-      color: 'black',
+      color: 'grey',
       dashArray: '3',
-      fillOpacity: 0.7
+      fillOpacity: 0.4
     }
   }
 
+// Neighborhood outline  
+d3.json(outlines).then(function (data) {
+  
   // create neighborhood outlines
-  L.geoJson(data.features, {
+  L.geoJson(data.features, 
     
-    onEachFeature: function (feature, coordinates) {
-      var style = {
-      "color": "black",
-      "fillColor": returnColor(feature.properties.name),
-      "opacity": 1
-      }
-    },
+    {style: style,
+
     // Add pop up boxes 
-    // onEachFeature: popups,
-    // onEachFeature: style
+    onEachFeature: popups}
+
     // })
-  }).addTo(myMap)
+  ).addTo(myMap)
 });
 
-// function markerSize(size) { // might not use 
-//   return size / 200;
-// }
 
 // Plot houses
-d3.json(housePrices).then(function (data) {
+// d3.json(housePrices).then(function (data) {
+//   var marker = L.geoJson(data.features, {
+//     onEachFeature: housePopup,
+//     pointToLayer: function (feature, coordinate) {
+//       var style = {
+//         radius: 10,
+//         fillColor: getColor(feature.properties.price),
+//         color: 'black',
+//         weight: 1,
+//         opacity: 1,
+//         fillOpacity: 0.8
+//       }
+//       return L.circleMarker(coordinate, style)
+//     }
+//   })
+//   marker.addTo(myMap);
+// });
 
-  var marker = L.geoJson(data.features, {
-
-    onEachFeature: housePopup,
-
-    pointToLayer: function (feature, coordinate) {
-
-      var style = {
-        radius: 10,
-        fillColor: getColor(feature.properties.price),
-        color: 'black',
-        weight: 1,
-        opacity: 1,
-        fillOpacity: 0.8
-      }
-
-      return L.circleMarker(coordinate, style)
-    }
-  })
-
-  marker.addTo(myMap);
-});
-
-
-
- 
-
-function calculateAvg(place) {
-  d3.json('static/data/joined.json').then(function(data) {
-    var neighborhoodList = [];
-    var neighborhoodAvg = [];
-
-    // Loop through dallas neighborhoods and calculate average house price 
-    data.features.forEach(feature => {
-      var neighborhood = feature.properties.name;
-      
-      if (neighborhood in neighborhoodList) {
-        neighborhoodList[neighborhood] += 1;
-        neighborhoodList[neighborhood + ' price'] = neighborhoodList[neighborhood + ' price'] + (feature.properties.price);
-        neighborhoodAvg[neighborhood] = neighborhoodList[neighborhood + ' price'] / neighborhoodList[neighborhood];
-      }
-      else {
-        neighborhoodList[neighborhood] = 1;
-        neighborhoodList[neighborhood + ' price'] = (feature.properties.price);
-        neighborhoodAvg[neighborhood] = neighborhoodList[neighborhood + ' price']
-      };
-    })
-
-    // Fill in empty data (Do an auto loop later)
-    neighborhoodAvg['Design District'] = 0;
-    neighborhoodAvg['University Park'] = 0;
-    neighborhoodAvg['Knox'] = 0;
-    neighborhoodAvg['South Dallas'] = 0;
-    
-    var avg = neighborhoodAvg[place];
-    
-    console.log(avg)
-    
-    colorMap(avg)
-  })
-};
-
-
-function returnColor(place) { // delete later this is just to check the function 
-  calculateAvg(place);
-  console.log(place, calculateAvg(place)) // check 
-}
 
 
 // Police report heat layer 
@@ -209,31 +138,8 @@ d3.json(crimeReports).then(function(response) {
 
   // Create heat layer 
   L.heatLayer(heatArray, {
-    radius: 80,
-    blur: 40
+    radius: 70,
+    blur: 15
   }).addTo(myMap);
 })
 
-
-// Adding crime markers
-// var crimeUrl = "https://www.dallasopendata.com/resource/qv6i-rri7.json$limit=1000";
-
-// d3.json(crimeUrl).then(function (response) {
-
-//   console.log(response);
-
-//   for (var i = 0; i < response.length; i++) {
-//     var location = response[i].location;
-
-//     if (location) {
-//       L.marker([location.coordinates[1], location.coordinates[0]]).addTo(myMap);
-//     }
-//   }
-
-// });
-
-
-// var groceryData = 'static/data/grocerystores.json'
-// d3.json(groceryData).then(function(data) {
-
-// })
