@@ -142,4 +142,3 @@ d3.json(crimeReports).then(function(response) {
     blur: 15
   }).addTo(myMap);
 })
-
