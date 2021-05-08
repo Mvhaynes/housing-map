@@ -168,4 +168,4 @@ d3.json(crimeReports).then(function(response) {
     radius: 70,
     blur: 15
   }).addTo(myMap);
-});
+
