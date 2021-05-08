@@ -56,6 +56,7 @@ function colorMap(avg) {
 
 // Info box function  
 function popups(feature, layer) {
+
   layer.bindPopup(
     "<h3>" + feature.properties.name + "</h3><hr>" +
     "<p>Average House Price: $" + feature.properties.avg // figure out how to print not enough info for avg = 0 
@@ -88,17 +89,43 @@ function style(feature) {
 d3.json(outlines).then(function (data) {
   
   // create neighborhood outlines
-  L.geoJson(data.features, 
+  L.geoJson(data.features, {
     
-    {style: style,
+    style: style,
 
     // Add pop up boxes 
-    onEachFeature: popups}
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup(
+        "<h3>" + feature.properties.name + "</h3><hr>" +
+        "<p>Average House Price: $" + feature.properties.avg // figure out how to print not enough info for avg = 0 
+      )
 
+      layer.on({
+        // When a user's mouse touches a map feature, the mouseover event calls this function, that feature's opacity changes to 90% so that it stands out
+        mouseover: function(event) {
+          layer = event.target;
+          layer.setStyle({
+            fillOpacity: 0.9
+          });
+        },
+        // When the cursor no longer hovers over a map feature - when the mouseout event occurs - the feature's opacity reverts back to 50%
+        mouseout: function(event) {
+          layer = event.target;
+          layer.setStyle({
+            fillOpacity: 0.5
+          });
+        },
+        // When a feature (neighborhood) is clicked, it is enlarged to fit the screen
+        click: function(event) {
+          myMap.fitBounds(event.target.getBounds());
+        }
+      });
+
+    }
+  }
     // })
   ).addTo(myMap)
 });
-
 
 // Plot houses
 // d3.json(housePrices).then(function (data) {
@@ -135,11 +162,10 @@ d3.json(crimeReports).then(function(response) {
       heatArray.push([location.latitude, location.longitude])
       }
     }
-
+    console.log(heatArray);
   // Create heat layer 
   L.heatLayer(heatArray, {
     radius: 70,
     blur: 15
   }).addTo(myMap);
-})
-
+});
