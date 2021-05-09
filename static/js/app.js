@@ -9,6 +9,10 @@ var crimeReports = 'static/data/police_reports.json';
 
 // Grocery store data
 var groceryStores = 'static/data/grocerystores.json';
+// Variables to create layers
+var heatArray = [];
+var houseLayer = L.layerGroup();
+var crimeLayer = L.layerGroup(crimeHeat);
 
 // Color function based on house price 
 var colorList = ['#ffffd9','#edf8b1','#c7e9b4','#7fcdbb','#41b6c4','#1d91c0','#225ea8','#253494','#081d58']
@@ -46,12 +50,12 @@ function colorMap(avg) {
                   colorList[0]
   )};
 
+  
 // Info box function  
 function popups(feature, layer) {
   layer.bindPopup(
     "<h3>" + feature.properties.name + "</h3><hr>" +
-    "<p>Median Income: " +
-    "<p>Average House Price: "
+    "<p>Average House Price: $" + feature.properties.avg
   )
 };
 
@@ -66,11 +70,20 @@ function housePopup(feature, coordinate) {
   )
 };
 
+function style(feature) {
+  return {
+    fillColor: colorMap(feature.properties.avg),
+    weight: 2,
+    opacity: 1,
+    color: 'grey',
+    dashArray: '3',
+    fillOpacity: 0.4
+  }
+}
+
 // Neighborhood outline  
 d3.json(outlines).then(function (data) {
-  
   var features = data.features;
-  
   function style(feature) {
     var fill = {
       fillColor: returnColor(feature.properties.name),
@@ -84,7 +97,6 @@ d3.json(outlines).then(function (data) {
 
   // create neighborhood outlines
   L.geoJson(data.features, {
-    
     onEachFeature: function (feature, coordinates) {
       var style = {
       "color": "black",
@@ -92,26 +104,14 @@ d3.json(outlines).then(function (data) {
       "opacity": 1
       }
     },
-    // Add pop up boxes 
-    // onEachFeature: popups,
-    // onEachFeature: style
-    // })
-  })
+  }).addTo(myMap);
 });
-
-// function markerSize(size) { // might not use 
-//   return size / 200;
-// }
 
 // Plot houses
 d3.json(housePrices).then(function (data) {
-
-  var marker = L.geoJson(data.features, {
-
+  markers = L.geoJson(data.features, {
     onEachFeature: housePopup,
-
     pointToLayer: function (feature, coordinate) {
-
       var style = {
         radius: 10,
         fillColor: getColor(feature.properties.price),
@@ -120,22 +120,19 @@ d3.json(housePrices).then(function (data) {
         opacity: 1,
         fillOpacity: 0.8
       }
-
-      return L.circleMarker(coordinate, style);
+      return (L.circleMarker(coordinate, style));
     }
   })
-
+  markers.addTo(houseLayer);
 });
 
 // function calculateAvg(place) {
 //   d3.json('static/data/joined.json').then(function(data) {
 //     var neighborhoodList = [];
 //     var neighborhoodAvg = [];
-
 //     // Loop through dallas neighborhoods and calculate average house price 
 //     data.features.forEach(feature => {
 //       var neighborhood = feature.properties.name;
-      
 //       if (neighborhood in neighborhoodList) {
 //         neighborhoodList[neighborhood] += 1;
 //         neighborhoodList[neighborhood + ' price'] = neighborhoodList[neighborhood + ' price'] + (feature.properties.price);
@@ -147,49 +144,29 @@ d3.json(housePrices).then(function (data) {
 //         neighborhoodAvg[neighborhood] = neighborhoodList[neighborhood + ' price']
 //       };
 //     })
-
 //     // Fill in empty data (Do an auto loop later)
 //     neighborhoodAvg['Design District'] = 0;
 //     neighborhoodAvg['University Park'] = 0;
 //     neighborhoodAvg['Knox'] = 0;
 //     neighborhoodAvg['South Dallas'] = 0;
-    
 //     var avg = neighborhoodAvg[place];
-    
 //     console.log(avg)
-    
 //     colorMap(avg)
 //   })
 // };
 
-function returnColor(place) { // delete later this is just to check the function 
-  calculateAvg(place);
-  console.log(place, calculateAvg(place)) // check 
-}
-
-// Police report heat layer 
+// Police report heat map 
 d3.json(crimeReports).then(function(response) {
-  
-  var heatArray = [];
-
   // Loop through data and add coordinates to array 
   for (var i = 0; i < response.length; i++) {
-    
     var location = response[i].geocoded_column;
-
     if (location.latitude) {
       heatArray.push([location.latitude, location.longitude])
       }
     }
-
-  // Create heat layer 
-var crimeHeat = L.heatLayer(heatArray, {
-    radius: 80,
-    blur: 40
-  }).addTo(myMap);
 })
 
-// Create background 
+// Background maps
 var base = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
   attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
   tileSize: 512,
@@ -199,41 +176,48 @@ var base = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?
   accessToken: api_key
 });
 
-// Center around Dallas
+var satellite = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+  attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
+  tileSize: 512,
+  maxZoom: 18,
+  zoomOffset: -1,
+  id: "mapbox/satellite-streets-v11",
+  accessToken: api_key
+});
+
+var crimeHeat = L.heatLayer(heatArray, {
+  radius: 80,
+  blur: 40
+});
+// Map layer options
+var baseMaps = {
+  "Grayscale": base,
+  "Satellite": satellite
+};
+var overlayMaps = {
+  "Houses": houseLayer,
+  "Crime Level": crimeLayer
+};
+
+// Default map view
 var myMap = L.map("map", {
   center: [32.82, -96.7970],        
   zoom: 11,
-  //layers: [base, houseLayer]
+  layers: [base, houseLayer]
 });
+crimeHeat.addTo(crimeLayer);
 
-//var houseLayer = L.layerGroup(marker);
-//var crimeLayer = L.layerGroup(crimeHeat);
-
-var baseMaps = {
-  "Map": base
-};
-
-//var overlayMaps = {
-  //"Houses": houseLayer,
-  //"Crime Level": crimeLayer
-//};
-
-
+// Map layer control
 L.control.layers(baseMaps, overlayMaps).addTo(myMap);
 
 // Adding crime markers
 // var crimeUrl = "https://www.dallasopendata.com/resource/qv6i-rri7.json$limit=1000";
-
 // d3.json(crimeUrl).then(function (response) {
-
 //   console.log(response);
-
 //   for (var i = 0; i < response.length; i++) {
 //     var location = response[i].location;
-
 //     if (location) {
 //       L.marker([location.coordinates[1], location.coordinates[0]]).addTo(myMap);
 //     }
 //   }
-
 // });
