@@ -379,10 +379,8 @@
                 ]
             }
         },
-        {
-        "type": "FeatureCollection",
-            "features": [
-            { "type": "Feature",
+        { 
+            "type": "Feature",
             "properties": {
                 "name": "University Park",
                 "cartodb_id": 25
@@ -614,9 +612,7 @@
                     ]
                 ]
             }
-        }
-    ]
-},
+        },
 {
     "type": "Feature",
     "properties": {
