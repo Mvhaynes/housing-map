@@ -13,6 +13,7 @@ mongo = PyMongo(app, uri="mongodb://localhost:27017/houses")
 @app.route("/")
 def index():
 
+    houses = mongo.db.houses
     # Redirect back to home page
     return render_template('index.html')
 
