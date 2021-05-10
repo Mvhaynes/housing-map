@@ -46,18 +46,22 @@ function buildPlot(area) {
 
         var barTrace = {
             type: "bar",
-            x: price.slice(0, 10).reverse(),
-            y: address.slice(0, 10).reverse(),
+            x: price.slice(0, 12).reverse(),
+            y: address.slice(0, 12).reverse(),
             orientation: "h"
         };
 
         var barData = [barTrace];
 
         var barLayout = {
+            title: `${area} House Prices`,
             xaxis: {title: "Price ($)"},
+            yaxis: {autorange: true},
             padding: {
                 left: 50,
-                bottom: 100
+                bottom: 100,
+                top: 50,
+                right: 50
             }
         };
 
