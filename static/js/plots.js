@@ -31,9 +31,13 @@ function init() {
     });
 };
 
-function buildPlot() {
+function buildPlot(area) {
     var house_data = "static/data/joined.csv";
+
     d3.csv(house_data).then(data => {
+        console.log(area);
+        data = data.filter(d => d['name'] === area);
+        console.log(data);
         var price = unpack(data, 'price');
         var address = unpack(data, 'address');
 
@@ -52,7 +56,8 @@ function buildPlot() {
         var barLayout = {
             xaxis: {title: "Price ($)"},
             padding: {
-                left: 15
+                left: 50,
+                bottom: 100
             }
         };
 
@@ -63,7 +68,6 @@ function buildPlot() {
 }
 
 function optionChanged(newSample) {
-    newSample =+ newSample;
     console.log(newSample);
     buildPlot(newSample);
 };
