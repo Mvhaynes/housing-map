@@ -202,3 +202,10 @@ var svg = new Vivus('svg', { type: 'scenario-sync', duration: 20, start: 'autost
       function (loop) {
         loop.play(loop.getStatus() === 'end' ? -1 : 1)
       });
+$(document).ready(function () {
+  $(".main").onepage_scroll({
+    sectionContainer: "section",
+    responsiveFallback: 600,
+    loop: true
+  })
+});
