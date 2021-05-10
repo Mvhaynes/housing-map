@@ -49,13 +49,16 @@ function buildPlot(area) {
             type: "bar",
             x: price.slice(0, 10).reverse(),
             y: address.slice(0, 10).reverse(),
-            orientation: "h"
+            orientation: "h",
+            marker: {
+                color: price,
+                opacity: 0.6}
         };
 
         var barData = [barTrace];
 
         var barLayout = {
-            xaxis: {title: "Price ($)"},
+            xaxis: {title: "Price"},
             padding: {
                 left: 50,
                 bottom: 100

@@ -297,6 +297,13 @@ header {
   height:100%;
   margin-bottom: 50px;
 }
+.main section.page4 .page_container {
+  overflow: hidden;
+  width: 100%;
+  height:100%;
+  margin-bottom: 50px;
+}
+
 .main section.page3 h1 {
   text-align: left;
   padding: 15px;
@@ -305,6 +312,29 @@ header {
   letter-spacing: -1px;
   color: black;
 }
+#housePrices {
+  margin-top: 20px;
+  text-align: center;
+  font-family: 'futura-pt-bold', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  letter-spacing:2px;
+  position: relative;
+  text-transform: uppercase;
+  color: rgba(6,72,59,255)
+}
+.main.page4.h3 {
+  margin-top: 5px;
+  text-align: center;
+  font-family: 'futura-pt', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  letter-spacing:2px;
+  position: relative;
+  text-transform: uppercase;
+  color: rgba(6,72,59,255)
+}
+
 .main section.page3 h2 {
   color: rgba(0,0,0,0.85);
   text-align: left;
