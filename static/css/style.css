@@ -74,6 +74,10 @@ body, html {
   text-decoration: none;
 }
 
+.navContainer {
+  position: relative;
+}
+
 #map {
   width: 800;
   height: 570px;
