@@ -1,4 +1,4 @@
-,address,price,city,state,zipcode,beds,baths,size,type,lat,lng,geometry,name
+id,address,price,city,state,zipcode,beds,baths,size,type,lat,lng,geometry,name
 0,2226 Pecan Grove Ct,503900, Dallas,TX,75228,3 ,3 ,2434,House,32.811456,-96.703775,POINT (-96.70377499999999 32.811456),East Dallas
 21,719 Parkhurst Dr,399000, Dallas,TX,75218,3 ,2 ,1446,House,32.849672999999996,-96.706613,POINT (-96.706613 32.849673),East Dallas
 25,11318 Aledo Dr,230000, Dallas,TX,75228,3 ,2 ,1312,House,32.849374,-96.680053,POINT (-96.680053 32.849374),East Dallas
