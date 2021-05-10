@@ -190,15 +190,15 @@ crimeHeat.addTo(crimeLayer);
 // Map layer control
 L.control.layers(baseMaps, overlayMaps).addTo(myMap);
 
-// Adding crime markers
-// var crimeUrl = "https://www.dallasopendata.com/resource/qv6i-rri7.json$limit=1000";
-// d3.json(crimeUrl).then(function (response) {
-//   console.log(response);
-//   for (var i = 0; i < response.length; i++) {
-//     var location = response[i].location;
-//     if (location) {
-//       L.marker([location.coordinates[1], location.coordinates[0]]).addTo(myMap);
-//     }
-//   }
-// });
+// AOS: Fade 
+AOS.init({
+  offset: 400,
+  delay: 0,
+  duration: 2000,
+});
 
+ // SVG animation
+var svg = new Vivus('svg', { type: 'scenario-sync', duration: 20, start: 'autostart', dashGap: 20, forceRender: false},
+      function (loop) {
+        loop.play(loop.getStatus() === 'end' ? -1 : 1)
+      });

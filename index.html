@@ -91,26 +91,8 @@
 
   <!-- animation script -->
   <script src="dist/vivus.js"></script>
-  <script>
-
-    var svg = new Vivus('svg', { type: 'scenario-sync', duration: 20, start: 'autostart', dashGap: 20, forceRender: false},
-      function (loop) {
-        loop.play(loop.getStatus() === 'end' ? -1 : 1)
-      });
-
-  </script>
-
+  <!-- fade script -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      offset: 400,
-      delay: 0,
-      duration: 2000,
-    });
-  </script>
-
-
-
 
   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
     integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
