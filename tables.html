@@ -5,11 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Bellybutton Biodiversity</title>
+  <title>Housing Market - Charts</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+  <link rel="stylesheet" type="text/css" href="static/css/semantic.css">
+  <link rel="stylesheet" type="text/css" href="static/css/transition.css">
+  <link rel="stylesheet" type="text/css" href="static/js/transition.js">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+  <!-- <script src="assets/library/jquery.min.js"></script> -->
+  <script src="static/js/semantic.js"></script>
+  <script>
+
+  
+  
+
+  </script>
 </head>
 
 <body>
+
 
   <div class="container">
     <div class="row">
@@ -19,16 +34,44 @@
       </div>
     </div>
     <div class="row">
+
       <div class="col-md-2">
-        <div class="well">
-          <h5>Dallas Area:</h5>
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        <div class="container">
+          <div class="row">
+            <div class="column">
+              <h1 class="ui header">Filter Chart</h1>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-md-12">
-        <div id="bar"></div>
+      <div class="ui floating dropdown labeled search icon button">
+        <i class="filter icon"></i>
+
+        <span class="text" id="selDataset">Filter Charts</span>
+
+        <div class="menu">
+          <div class="ui icon search input">
+            <input type="text" placeholder="Neighborhood">
+          </div>
+          <div class="divider"></div>
+          <div class="header">
+            Dallas Neighborhoods
+          </div>
+
+          <div class="scrolling menu">
+          
+          </div>
+        </div>
       </div>
     </div>
+
+    <div class="container">
+      <div id="bar" style="transform: translate(3%);"></div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>

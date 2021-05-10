@@ -1,5 +1,5 @@
 var barChart = d3.select("#bar");
-var areaSelect = d3.select("#selDataset");
+var areaSelect = d3.select(".menu");
 var areaList = [];
 
 function unpack(rows, key) {
@@ -11,21 +11,22 @@ function init() {
     
     d3.csv(house_data).then((data) => {
 
-        console.log(data);
+        // Select neighborhood name from dataset 
         var sampleName = unpack(data, 'name');
 
-
+        // Add neighborhood names to filter list 
         sampleName.forEach(area => {
             if (!areaList.includes(area)) {
                    areaList.push(area);
                    areaSelect
                         .append("option")
+                        .attr("class","item")
                         .text(area)
                         .property("value", area);
             };
         });
 
-        console.log(sampleName);
+        // Set first result as default chart
         var firstSample = sampleName[0];
         buildPlot(firstSample);
     });
@@ -58,8 +59,15 @@ function buildPlot(area) {
             padding: {
                 left: 50,
                 bottom: 100
-            }
-        };
+            },
+                margin: {
+                  l: 200,
+                  r: 100,
+                  t: 50,
+                  b: 30
+                }
+              };
+
 
         d3.select("#bar").html("");
 
@@ -67,8 +75,18 @@ function buildPlot(area) {
     });
 }
 
+$(document).ready(function () {
+  $('.ui.floating.dropdown.labeled.icon.button').dropdown({
+    on: 'hover',
+    onChange: function(value, text, $selectedItem) {
+        optionChanged(text);
+    }
+  });
+})
+;
+
 function optionChanged(newSample) {
-    console.log(newSample);
+    console.log(newSample)
     buildPlot(newSample);
 };
 
