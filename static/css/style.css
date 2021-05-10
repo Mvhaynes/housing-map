@@ -157,7 +157,7 @@ body {
   height: 100%;
 }
 
-p {
+.page2 p {
   padding-top: 220px;
   margin-left: 20px;
   text-align: center;
@@ -166,7 +166,16 @@ p {
   font-size: 55px;
   text-transform: uppercase;
 }
-
+#map h3 {
+  font-size: 20px;
+  font-family: 'futura-pt-bold', sans-serif;
+  font-weight: 600;
+}
+#map p {
+  font-size: 15px;
+  font-family: 'futura-pt', sans-serif;
+  font-weight: 400;
+}
 h1, h2 {
   width: 100%;
 }
