@@ -11,7 +11,7 @@ The frontpage features an SVG of the Dallas skyline which was converted into an 
 Leaflet map created by combining GeoJSON data for Dallas Neighborhoods with geolocation data scraped from Zillow.com listings using Geopandas to generate datasets containing housing data separated by neighborhoods. The layer controls feature enables users to toggle between greyscale and satellite map tiles, or view house markers, the crime heat map, and grocery store markers. 
 <br>
 
-The website is separated into sections and uses a JQuery plugin for the one-page scroll effect ([created by Pete R.]('https://github.com/peachananr/onepage-scroll')). 
+The website is separated into sections and uses a JQuery plugin for the one-page scroll effect [created by Pete R.]('https://github.com/peachananr/onepage-scroll').
 ## Tools 
 
 * Javascript
