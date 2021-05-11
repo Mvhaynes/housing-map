@@ -16,19 +16,22 @@ var houseLayer = L.layerGroup();
 var crimeLayer = L.layerGroup(crimeHeat);
 
 // Color function based on house price 
-// var markerColor = ['#ffffd9','#edf8b1','#c7e9b4','#7fcdbb','#41b6c4','#1d91c0','#225ea8','#253494','#081d58']
-// function getColor(price) { // Change numbers later 
-//   return price > 4000000 ? markerColor[8] :
-//     price > 1500000 ? markerColor[7] :
-//       price > 850000 ? markerColor[6] :
-//         price > 650000 ? markerColor[5] :
-//           price > 550000 ? markerColor[4] :
-//             price > 350000 ? markerColor[3] :
-//               price > 250000 ? markerColor[2] :
-//                 price > 150000 ? markerColor[1] :
-//                 markerColor[0]
-// };
+var markerColor = ['#ffffd9','#edf8b1','#c7e9b4','#7fcdbb','#41b6c4','#1d91c0','#225ea8','#253494','#081d58']
+function getColor(price) { // Change numbers later 
+  return price > 4000000 ? markerColor[8] :
+    price > 1500000 ? markerColor[7] :
+      price > 850000 ? markerColor[6] :
+        price > 650000 ? markerColor[5] :
+          price > 550000 ? markerColor[4] :
+            price > 350000 ? markerColor[3] :
+              price > 250000 ? markerColor[2] :
+                price > 150000 ? markerColor[1] :
+                markerColor[0]
+};
 
+function markerSize(size) {
+  return size / 300;
+}
 var colorList = ['white','#edf8b1','#c7e9b4','#7fcdbb','#41b6c4','#1d91c0','#225ea8','#253494','#081d58']
 function colorMap(avg) {  
   return avg > 1000000 ? colorList[8] :
@@ -113,24 +116,24 @@ d3.json(outlines).then(function (data) {
   }).addTo(myMap)
 });
 
-// // Plot houses
-// d3.json(housePrices).then(function (data) {
-//   markers = L.geoJson(data.features, {
-//     onEachFeature: housePopup,
-//     pointToLayer: function (feature, coordinate) {
-//       var style = {
-//         radius: 10,
-//         fillColor: getColor(feature.properties.price),
-//         color: 'black',
-//         weight: 1,
-//         opacity: 1,
-//         fillOpacity: 0.8
-//       }
-//       return (L.circleMarker(coordinate, style));
-//     }
-//   })
-//   markers.addTo(houseLayer);
-// });
+// Plot houses
+d3.json(housePrices).then(function (data) {
+  markers = L.geoJson(data.features, {
+    onEachFeature: housePopup,
+    pointToLayer: function (feature, coordinate) {
+      var style = {
+        radius: markerSize(feature.properties.size),
+        fillColor: getColor(feature.properties.price),
+        color: 'black',
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.8
+      }
+      return (L.circleMarker(coordinate, style));
+    }
+  })
+  markers.addTo(houseLayer);
+});
 
 
 // Police report heat layer 
@@ -183,7 +186,7 @@ var overlayMaps = {
 var myMap = L.map("map", {
   center: [32.82, -96.7970],        
   zoom: 11,
-  layers: [base, houseLayer]
+  layers: [base]
 });
 crimeHeat.addTo(crimeLayer);
 
@@ -202,6 +205,8 @@ var svg = new Vivus('svg', { type: 'scenario-sync', duration: 20, start: 'autost
       function (loop) {
         loop.play(loop.getStatus() === 'end' ? -1 : 1)
       });
+      
+//  scroll function     
 $(document).ready(function () {
   $(".main").onepage_scroll({
     sectionContainer: "section",
